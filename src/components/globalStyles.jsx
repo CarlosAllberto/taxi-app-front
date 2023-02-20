@@ -42,8 +42,8 @@ export const Button = styled.TouchableOpacity`
 export const ButtonOutline = styled.TouchableOpacity`
     padding: 5px 15px;
     border-radius: 50px;
-    background: #f9f9f9;
-    border: 1px solid ${colors.cor1};
+    background: ${props => props.theme.background};
+    border: 2px solid ${colors.cor1};
     text-align: center;
     margin: 5px;
     width: auto;

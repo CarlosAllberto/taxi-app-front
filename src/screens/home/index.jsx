@@ -14,6 +14,8 @@ import * as Location from "expo-location";
 
 export default function Home({navigation}) {
 
+    const Navigate = (screen) => navigation.navigate(screen);
+
     const [location, setLocation] = useState(null);
     const [errorMsg, setErrorMsg] = useState(null);
 
@@ -93,7 +95,7 @@ export default function Home({navigation}) {
                 </ScrollView>
                 <Box style={styles.inputBox}>
                   <Box flexDirection="row" alignItems="center">
-                    <Input pl="40px" placeholder="Para onde vamos?"/>
+                    <Input pl="40px" placeholder="Para onde vamos?" onFocus={() => Navigate("Planeje sua próxima viagem")}/>
                     <Box pl="5px" position="absolute">
                       <Ionicons name="location" size={30} color="gray"/>
                     </Box>

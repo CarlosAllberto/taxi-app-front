@@ -28,13 +28,16 @@ export default function EsqueciSenha() {
     const ref_input4 = useRef();
 
     const [inputFocus, setInputFocus] = useState({
+        inputCode1: false,
+        inputCode2: false,
+        inputCode3: false,
+        inputCode4: false,
+
         input1: false,
-        input2: false,
-        input3: false,
-        input4: false,
+        input2: false
     });
 
-    const { input1, input2, input3, input4 } = inputFocus;
+    const { inputCode1, inputCode2, inputCode3, inputCode4, input1, input2 } = inputFocus;
 
     const [formDados, setFormDados] = useState({
         password: "",
@@ -117,9 +120,9 @@ export default function EsqueciSenha() {
 
                 <Box justifyContent="center" flexDirection="row">
                     <InputCode
-                    onFocus={() => setInputFocus({...inputFocus, input1: true})}
-                    onBlur={() => setInputFocus({...inputFocus, input1: false})}
-                    focused={input1}
+                    onFocus={() => setInputFocus({...inputFocus, inputCode1: true})}
+                    onBlur={() => setInputFocus({...inputFocus, inputCode1: false})}
+                    focused={inputCode1}
                     ref={ref_input1}
                     autoFocus={true}
                     type="text"
@@ -136,9 +139,9 @@ export default function EsqueciSenha() {
                     }}
                     />
                     <InputCode
-                    onFocus={() => setInputFocus({...inputFocus, input2: true})}
-                    onBlur={() => setInputFocus({...inputFocus, input2: false})}
-                    focused={input2}
+                    onFocus={() => setInputFocus({...inputFocus, inputCode2: true})}
+                    onBlur={() => setInputFocus({...inputFocus, inputCode2: false})}
+                    focused={inputCode2}
                     ref={ref_input2}
                     type="text"
                     placeholder="-"
@@ -154,9 +157,9 @@ export default function EsqueciSenha() {
                     }}
                     />
                     <InputCode
-                    onFocus={() => setInputFocus({...inputFocus, input3: true})}
-                    onBlur={() => setInputFocus({...inputFocus, input3: false})}
-                    focused={input3}
+                    onFocus={() => setInputFocus({...inputFocus, inputCode3: true})}
+                    onBlur={() => setInputFocus({...inputFocus, inputCode3: false})}
+                    focused={inputCode3}
                     ref={ref_input3}
                     type="text"
                     placeholder="-"
@@ -172,9 +175,9 @@ export default function EsqueciSenha() {
                     }}
                     />
                     <InputCode
-                    onFocus={() => setInputFocus({...inputFocus, input4: true})}
-                    onBlur={() => setInputFocus({...inputFocus, input4: false})}
-                    focused={input4}
+                    onFocus={() => setInputFocus({...inputFocus, inputCode4: true})}
+                    onBlur={() => setInputFocus({...inputFocus, inputCode4: false})}
+                    focused={inputCode4}
                     ref={ref_input4}
                     type="text"
                     placeholder="-"
