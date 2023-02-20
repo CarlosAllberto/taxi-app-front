@@ -6,12 +6,15 @@ export const Container = styled.View`
 `;
 
 export const Input = styled.TextInput`
-    background: ${props => props.disabled ? "#D9D9D9" : "#e6e6e6"};
+    background: ${props => props.focused ? "#f0e6ca" : "#e6e6e6"};
     padding: 10px 20px;
     border-radius: 8px;
     margin: 5px 0;
-    color: gray;
+    color: ${colors.cor6};
     font-size: 16px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: ${props => props.focused ? colors.cor1 : "#e6e6e6"};
     width:          ${props => props.w  || "100%"};
     margin-left:    ${props => props.ml || 0     };
     margin-right:   ${props => props.mr || 0     };
@@ -25,24 +28,27 @@ export const InputCode = styled(Input)`
     text-align: center;
 `;
 
-export const ButtonLarge = styled.TouchableOpacity`
-    padding: 10px;
-    border-radius: 8px;
-    background: ${props => props.backgroundColor || colors.yellow};
-    text-align: center;
-    margin: 5px 0;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-`;
+//  props.disabled ? "#D9D9D9" : "#e6e6e6"
 
 export const Button = styled.TouchableOpacity`
-    padding: 10px;
-    border-radius: 8px;
-    background: ${props => props.backgroundColor || colors.yellow};
+    padding: 5px 15px;
+    border-radius: ${props => props.radius || "8px"};
+    background: ${props => props.backgroundColor || colors.cor1};
     width: ${props => props.width || "100%"};
     text-align: center;
     margin: 5px 0;
+`;
+
+export const ButtonOutline = styled.TouchableOpacity`
+    padding: 5px 15px;
+    border-radius: 50px;
+    background: #f9f9f9;
+    border: 1px solid ${colors.cor1};
+    text-align: center;
+    margin: 5px;
+    width: auto;
+    flex-direction: row;
+    align-items: center;
 `;
 
 export const ButtonSocial = styled.TouchableOpacity`
@@ -58,7 +64,7 @@ export const ButtonSocial = styled.TouchableOpacity`
 export const ButtonFull = styled.TouchableOpacity`
     padding: 10px;
     border-radius: 30px;
-    background: ${props => props.backgroundColor || colors.yellow};
+    background: ${props => props.backgroundColor || colors.cor1};
     text-align: center;
     margin: 5px 0;
     flex-direction: row;
@@ -67,32 +73,26 @@ export const ButtonFull = styled.TouchableOpacity`
 `;
 
 export const TextButton = styled.Text`
-    color:     ${props => props.color || "#ffffff"};
+    color:     ${props => props.color || colors.cor6};
     font-size: ${props => props.size  || "20px"     };
     font-weight: 600;
     text-align: center;
 `;
 
 export const Title = styled.Text`
-    color:     ${props => props.color || "#ffffff"};
+    color:     ${props => props.color || colors.cor6};
     font-size: ${props => props.size  || "18px"     };
     font-weight: 600;
 `;
 
-export const TitleLarge = styled.Text`
-    color: ${props => props.color || "#ffffff"};
-    font-size: 32px;
-    font-weight: 700;
-`;
-
 export const TitleGG = styled.Text`
-    color: ${props => props.color || "#ffffff"};
+    color: ${props => props.color || colors.cor6};
     font-size: 42px;
     font-weight: 600;
 `;
 
 export const Texto = styled.Text`
-    color:          ${props => props.color      || "#ffffff"};
+    color:          ${props => props.color      || colors.cor6};
     font-size:      ${props => props.fontSize   || "16px"     };
     font-weight:    ${props => props.fontWeight || 400        };
     margin:         ${props => props.m          || 0          };
@@ -112,47 +112,21 @@ export const TextLink = styled(Texto)`
     margin-bottom:  ${props => props.mb         || "5px"};
     padding-top:    ${props => props.pt         || 0    };
     padding-bottom: ${props => props.pb         || 0    };
-    color:          ${props => props.color      || colors.blue};;
+    color:          ${props => props.color      || colors.cor4};
     //text-decoration-line: underline;
 `;
 
-export const TextoInfo = styled(Texto)`
-    color:          ${props => props.color         || "#000"};
-    font-weight:    ${props => props.fontWeight    || 500     };
-    padding-top:    ${props => props.pt            || "3px"   };
-    padding-bottom: ${props => props.pb            || "3px"   };
-    font-size:      ${props => props.fontSize      || "16px"  };
-    opacity: 0.5;
-`;
-
 export const Span = styled(Texto)`
-    color:          ${props => props.color         || colors.yellow};
+    color:          ${props => props.color         || colors.cor1};
     font-weight:    ${props => props.fontWeight    || 600        };
     padding-top:    ${props => props.pt            || 0          };
     padding-bottom: ${props => props.pb            || 0          };
-    font-size:      ${props => props.fontSize      || "16px"  };
-`;
-
-export const AlertError = styled.View`
-    background: #FF8181;
-    flex-direction: row;
-    border-radius: 8px;
-    align-items: center;
-    padding: 0 20px;
 `;
 
 export const Line = styled.View`
     width: 100%;
     background-color: #D9D9D9;
     height: 2px;
-`;
-
-export const CheckBox = styled.View`
-    width: 20px;
-    height: 20px;
-    background-color: ${props => props.checked ? "#2AC802" : "#D9D9D9"};
-    border-radius: 50px;
-    border: 1px solid #D9D9D9;
 `;
 
 export const IMG = styled.Image`
@@ -192,5 +166,44 @@ export const Paper = styled.View`
     padding: 10px 20px;
     width: 100%;
     border-radius: 8px;
-    elevation: 2;
 `;
+
+export const SwitchContainer = styled.View`
+    background: #E9E9E9;
+    flex-direction: row;
+    width: 100%;
+    border-radius: 8px;
+`;
+
+export const SwitchButton = styled.TouchableOpacity`
+    padding: 10px;
+    border-radius: 8px;
+    background: ${props => props.active ? colors.cor1 : "transparent" };
+    text-align: center;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: ${props => props.width || "auto" };
+`;
+
+export const Status = styled(Texto)`
+    background: ${props => props.color || colors.cor1 };
+    text-align: center;
+    border-radius: 10px;
+    font-weight: 500;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+`;
+
+export const NotificationSms = styled.View`
+    background: ${colors.cor1};
+    border-radius: 50px;
+    width: 40px;
+    height: 40px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+`;
+
+//font-weight: 500;

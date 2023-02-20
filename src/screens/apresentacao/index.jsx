@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { Box, IMG, Container, TitleGG, ButtonFull, TextButton, Span, Texto, Button } from "@components/globalStyles";
-import { SafeAreaView, StatusBar, ImageBackground } from "react-native";
+import { Box, IMG, Container, TitleGG, ButtonFull, TextButton, Texto, Button, Span } from "@components/globalStyles";
+import { SafeAreaView, ImageBackground } from "react-native";
+import { StatusBar } from 'expo-status-bar';
 import { ContDots, Dot } from "./styles";
 import colors from "@helpers";
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 
 export default function Apresentacao({navigation}) {
 
@@ -19,18 +20,17 @@ export default function Apresentacao({navigation}) {
             <ImageBackground style={{width: "100%", height: "100%"}} source={require("@assets/background.jpg")}>
                 <Container>
                 <Box mt="350px">
-                    <TitleGG>Welcome to</TitleGG>
+                    <TitleGG color="#fff">Bem Vindo ao</TitleGG>
                     <Span fontSize="100px" fontWeigth={500}>TAXI</Span>
                 </Box>
                 <Box>
-                    <Texto>
-                        the bast taxi app bla-bla-bla is very good 
-                        the bast taxi app bla-bla-bla is very good
+                    <Texto color="#fff">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
                     </Texto>
                 </Box>
                 <Box mt="50px" flexDirection="row" justifyContent="flex-end">
                     <Button width="auto" onPress={() => addPage()}>
-                        <Icon name="car-arrow-right" size={50} color={"#000"} />
+                        <MaterialCommunityIcons name="car-arrow-right" size={50} color={colors.cor6} />
                     </Button>
                 </Box>
                 </Container>
@@ -42,11 +42,11 @@ export default function Apresentacao({navigation}) {
         <>
         <Container>
         <Box flexDirection="row" justifyContent="center" mt="100px" mb="50px">
-            <IMG w="60%" h="220px" source={require("../../../assets/taxi-logo.png")}/>
+            <IMG w="60%" h="220px" source={require("@assets/taxi-logo.png")}/>
         </Box>
         <Box mb="50px">
-            <TitleGG color={colors.black}>
-                We Provide Professional TAXI services for you
+            <TitleGG>
+                Nós fornecemos serviços profissionais de táxi para você
             </TitleGG>
         </Box>
         <Box flexDirection="row" justifyContent="center" mb="50px">
@@ -58,7 +58,7 @@ export default function Apresentacao({navigation}) {
         </Box>
         <Box>
             <ButtonFull onPress={() => addPage()}>
-                <TextButton color={colors.black}>Next</TextButton>
+                <TextButton>Próximo</TextButton>
             </ButtonFull>
         </Box>
         </Container>
@@ -69,11 +69,11 @@ export default function Apresentacao({navigation}) {
         <>
         <Container>
         <Box flexDirection="row" justifyContent="center" mt="100px" mb="50px">
-            <IMG w="60%" h="220px" source={require("../../../assets/man.png")}/>
+            <IMG w="60%" h="220px" source={require("@assets/man.png")}/>
         </Box>
         <Box mb="50px">
-            <TitleGG color={colors.black}>
-                Your satisfacion is our number one priority
+            <TitleGG>
+                Sua satisfação é nossa prioridade número um
             </TitleGG>
         </Box>
         <Box flexDirection="row" justifyContent="center" mb="50px">
@@ -85,7 +85,7 @@ export default function Apresentacao({navigation}) {
         </Box>
         <Box>
             <ButtonFull onPress={() => addPage()}>
-                <TextButton color={colors.black}>Next</TextButton>
+                <TextButton>Próximo</TextButton>
             </ButtonFull>
         </Box>
         </Container>
@@ -96,11 +96,11 @@ export default function Apresentacao({navigation}) {
         <>
         <Container>
         <Box flexDirection="row" justifyContent="center" mt="100px" mb="50px">
-            <IMG w="60%" h="220px" source={require("../../../assets/woman.png")}/>
+            <IMG w="60%" h="220px" source={require("@assets/woman.png")}/>
         </Box>
         <Box mb="50px">
-            <TitleGG color={colors.black}>
-                Let's make your day great with TAXI right now!
+            <TitleGG>
+                Vamos tornar o seu dia ótimo com o TAXI agora mesmo!
             </TitleGG>
         </Box>
         <Box flexDirection="row" justifyContent="center" mb="50px">
@@ -112,7 +112,7 @@ export default function Apresentacao({navigation}) {
         </Box>
         <Box>
             <ButtonFull onPress={() => addPage()}>
-                <TextButton color={colors.black}>Get Started</TextButton>
+                <TextButton>Iniciar</TextButton>
             </ButtonFull>
         </Box>
         </Container>
@@ -120,8 +120,8 @@ export default function Apresentacao({navigation}) {
     );
 
     return(
-        <SafeAreaView flex={1}>
-            <StatusBar />
+        <SafeAreaView flex={1} backgroundColor="#f9f9f9">
+            <StatusBar style="auto"/>
             {
             (() => {
                 switch(pageCont) {

@@ -10,7 +10,7 @@ export const ContDots = styled.View`
 export const Dot = styled.View`
     width: ${props => props.active ? "45px" : "15px"};
     height: 15px;
-    background-color: ${props => props.active ? colors.yellow : "#cccbcb"};
+    background-color: ${props => props.active ? colors.cor1 : "#cccbcb"};
     border-radius: 50px;
     margin: 0 3px;
     opacity: ${props => props.active ? 1 : 0.5};

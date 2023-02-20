@@ -1,18 +1,81 @@
-import { Box, Texto, Container } from "@components/globalStyles";
-import { SafeAreaView, StatusBar, ScrollView } from "react-native";
-import colors from "@helpers";
+import { Box, Texto, Container, Title } from "@components/globalStyles";
+import { SafeAreaView, ScrollView } from "react-native";
+import { StatusBar } from 'expo-status-bar';
 
 
 export default function PoliticaPrivacidade() {
     return(
-        <SafeAreaView flex={1}>
-            <StatusBar />
+        <SafeAreaView flex={1} backgroundColor="#f9f9f9">
+            <StatusBar style="auto" />
             <Container>
                 <ScrollView>
                     <Box mt="50px">
-                        <Texto color={colors.black}>
-                            Aqui vai as policas de privacidade
-                        </Texto>
+                        <Box mb="40px">
+                            <Title>
+                                politica tal de não sei oque
+                            </Title>
+                            <Texto>
+                                Aqui vai as policas de privacidade de não sei. apenas amostra bla bla bla.
+                                caso não concorde não crie a sua conta nesse app
+                                Aqui vai as policas de privacidade de não sei. apenas amostra bla bla bla.
+                                caso não concorde não crie a sua conta nesse app
+                            </Texto>
+                        </Box>
+                        <Box mb="40px">
+                            <Title>
+                                politica tal de não sei oque
+                            </Title>
+                            <Texto>
+                                Aqui vai as policas de privacidade de não sei. apenas amostra bla bla bla.
+                                caso não concorde não crie a sua conta nesse app
+                                Aqui vai as policas de privacidade de não sei. apenas amostra bla bla bla.
+                                caso não concorde não crie a sua conta nesse app
+                            </Texto>
+                        </Box>
+                        <Box mb="40px">
+                            <Title>
+                                politica tal de não sei oque
+                            </Title>
+                            <Texto>
+                                Aqui vai as policas de privacidade de não sei. apenas amostra bla bla bla.
+                                caso não concorde não crie a sua conta nesse app
+                                Aqui vai as policas de privacidade de não sei. apenas amostra bla bla bla.
+                                caso não concorde não crie a sua conta nesse app
+                            </Texto>
+                        </Box>
+                        <Box mb="40px">
+                            <Title>
+                                politica tal de não sei oque
+                            </Title>
+                            <Texto>
+                                Aqui vai as policas de privacidade de não sei. apenas amostra bla bla bla.
+                                caso não concorde não crie a sua conta nesse app
+                                Aqui vai as policas de privacidade de não sei. apenas amostra bla bla bla.
+                                caso não concorde não crie a sua conta nesse app
+                            </Texto>
+                        </Box>
+                        <Box mb="40px">
+                            <Title>
+                                politica tal de não sei oque
+                            </Title>
+                            <Texto>
+                                Aqui vai as policas de privacidade de não sei. apenas amostra bla bla bla.
+                                caso não concorde não crie a sua conta nesse app
+                                Aqui vai as policas de privacidade de não sei. apenas amostra bla bla bla.
+                                caso não concorde não crie a sua conta nesse app
+                            </Texto>
+                        </Box>
+                        <Box mb="40px">
+                            <Title>
+                                politica tal de não sei oque
+                            </Title>
+                            <Texto>
+                                Aqui vai as policas de privacidade de não sei. apenas amostra bla bla bla.
+                                caso não concorde não crie a sua conta nesse app
+                                Aqui vai as policas de privacidade de não sei. apenas amostra bla bla bla.
+                                caso não concorde não crie a sua conta nesse app
+                            </Texto>
+                        </Box>
                     </Box>
                 </ScrollView>
             </Container>

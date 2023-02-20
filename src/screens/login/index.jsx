@@ -1,11 +1,18 @@
 import { useState } from "react";
 import { Box, IMG, Container, TitleGG, ButtonFull, TextButton, Input, Texto, TextLink, ButtonSocial } from "@components/globalStyles";
-import { SafeAreaView, StatusBar } from "react-native";
-import colors from "@helpers";
+import { SafeAreaView, KeyboardAvoidingView, Platform } from "react-native";
+import { StatusBar } from 'expo-status-bar';
 
 export default function Login({navigation}) {
 
     const Navigate = (screen) => navigation.navigate(screen);
+
+    const [inputFocus, setInputFocus] = useState({
+        input1: false,
+        input2: false
+    });
+
+    const { input1, input2 } = inputFocus;
 
     const [formDados, setFormDados] = useState({
         email: "",
@@ -15,14 +22,14 @@ export default function Login({navigation}) {
     const { email, password } = formDados;
 
     return(
-        <SafeAreaView flex={1}>
-            <StatusBar />
-            <Container>
+        <SafeAreaView flex={1} backgroundColor="#f9f9f9">
+            <StatusBar style="auto" />
+            <Container flex={1}>
                 <Box mt="100px" mb="50px" flexDirection="row" justifyContent="center">
-                    <TitleGG color={colors.black}>Login</TitleGG>
+                    <TitleGG>Login</TitleGG>
                 </Box>
                 <Box mt="10px" mb="10px" flexDirection="row" justifyContent="center">
-                    <Texto color={colors.black}>Acesso rápido:</Texto>
+                    <Texto>Acesso rápido:</Texto>
                 </Box>
                 <Box flexDirection="row" justifyContent="center">
                     <Box pr="10px" pl="10px">
@@ -35,18 +42,20 @@ export default function Login({navigation}) {
                             <IMG w="40px" h="40px" source={require("../../../assets/facebook.png")}/>
                         </ButtonSocial>
                     </Box>
-                    <Box pr="10px" pl="10px">
-                        <ButtonSocial>
-                            <IMG w="40px" h="40px" source={require("../../../assets/apple.png")}/>
-                        </ButtonSocial>
-                    </Box>
                 </Box>
                 <Box mt="30px" mb="30px" flexDirection="row" justifyContent="center">
-                    <Texto color={colors.black}>ou</Texto>
+                    <Texto>ou</Texto>
                 </Box>
-                <Box>
+                <Box flex={1}>
+                    <KeyboardAvoidingView
+                    flex={1}
+                    behavior="padding"
+                    >
                     <Box>
                         <Input 
+                        onFocus={() => setInputFocus({...inputFocus, input1: true})}
+                        onBlur={() => setInputFocus({...inputFocus, input1: false})}
+                        focused={input1}
                         placeholder="Email"
                         onChangeText={e => setFormDados({...formDados, email: e})}
                         value={email}
@@ -54,21 +63,30 @@ export default function Login({navigation}) {
                     </Box>
                     <Box>
                         <Input
+                        onFocus={() => setInputFocus({...inputFocus, input2: true})}
+                        onBlur={() => setInputFocus({...inputFocus, input2: false})}
+                        focused={input2}
                         placeholder="Senha"
                         onChangeText={e => setFormDados({...formDados, password: e})}
                         value={password}
                         />
                     </Box>
+                    <Box flexDirection="row" justifyContent="flex-end">
+                        <TextLink onPress={() => Navigate("Esqueci a Senha")}>Esqueci a Senha</TextLink>
+                    </Box>
                     <Box flexDirection="row" justifyContent="center"
                     mt="25px" alignItems="center">
-                        <Texto color={colors.black}>Não possui uma conta ainda? </Texto>
-                        <TextLink onPress={() => Navigate("Cadastro")}>Criar conta</TextLink>                        
+                        <Box>
+                            <Texto pt="0px" pb="0px">Não possui uma conta ainda? </Texto>
+                            <TextLink style={{textAlign: "center"}} onPress={() => Navigate("Cadastro")}>Criar conta</TextLink>    
+                        </Box>                    
                     </Box>
                     <Box mt="25px">
                         <ButtonFull onPress={() => Navigate("Home")}>
-                            <TextButton color={colors.black}>Login</TextButton>
+                            <TextButton>Login</TextButton>
                         </ButtonFull>
                     </Box>
+                    </KeyboardAvoidingView>
                 </Box>
             </Container>
         </SafeAreaView>
