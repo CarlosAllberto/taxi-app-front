@@ -22,9 +22,9 @@ export default function Cadastro({navigation}) {
     const { nome, email, password } = formDados;
 
     return(
-        <SafeAreaView flex={1} backgroundColor="#f9f9f9">
+        <SafeAreaView flex={1}>
             <StatusBar style="auto" />
-            <Container>
+            <Container flex={1}>
                 <Box mt="50px" mb="20px" flexDirection="row" justifyContent="center">
                     <TitleGG>Criar sua conta</TitleGG>
                 </Box>

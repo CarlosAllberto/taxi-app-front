@@ -22,7 +22,7 @@ export default function Login({navigation}) {
     const { email, password } = formDados;
 
     return(
-        <SafeAreaView flex={1} backgroundColor="#f9f9f9">
+        <SafeAreaView flex={1}>
             <StatusBar style="auto" />
             <Container flex={1}>
                 <Box mt="100px" mb="50px" flexDirection="row" justifyContent="center">

@@ -225,9 +225,9 @@ export default function ConfiguracaoConta({navigation}) {
     );
 
     return(
-        <SafeAreaView flex={1} backgroundColor="#f9f9f9">
+        <SafeAreaView flex={1}>
             <StatusBar style="auto" />
-            <Container>
+            <Container flex={1}>
                 {(() => {
                     switch(contPage) {
                     case 1:

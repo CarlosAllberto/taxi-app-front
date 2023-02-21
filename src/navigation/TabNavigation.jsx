@@ -7,10 +7,15 @@ import Corridas from "@screens/corridas";
 import Carteira from "@screens/carteira";
 import colors from "@helpers";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+import { useTheme } from "styled-components";
+
 
 const Tab = createBottomTabNavigator();
 
 export default function ShowBottomTabs() {
+    
+    const theme = useTheme();
+
     return(
         <Tab.Navigator
             screenOptions={{
@@ -19,7 +24,7 @@ export default function ShowBottomTabs() {
                 tabBarShowLabel: false,
                 tabBarStyle: {
                     position: "absolute",
-                    backgroundColor: "#ffffff",
+                    backgroundColor: theme.tabBar,
                     height: 60,
                     borderTopWidth: 0
                 }

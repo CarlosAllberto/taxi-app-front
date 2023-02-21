@@ -34,9 +34,9 @@ export default function Notificacoes({navigation}) {
     }
 
     return(
-        <SafeAreaView flex={1} backgroundColor="#f9f9f9">
+        <SafeAreaView flex={1}>
             <StatusBar style="auto" />
-            <Container>
+            <Container flex={1}>
                 <Box mt="30px">
                     <Box flexDirection="row" justifyContent="space-between" pt="5px" pb="5px">
                         <Box>

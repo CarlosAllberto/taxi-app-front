@@ -42,7 +42,7 @@ export default function EditarEndereco({navigation}) {
     }, []);
 
     return(
-        <SafeAreaView flex={1} backgroundColor="#f9f9f9">
+        <SafeAreaView flex={1}>
             <StatusBar style="auto"/>
             <Box flex={1}>
               <MapView 

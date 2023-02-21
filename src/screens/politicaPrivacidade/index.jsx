@@ -5,9 +5,9 @@ import { StatusBar } from 'expo-status-bar';
 
 export default function PoliticaPrivacidade() {
     return(
-        <SafeAreaView flex={1} backgroundColor="#f9f9f9">
+        <SafeAreaView flex={1}>
             <StatusBar style="auto" />
-            <Container>
+            <Container flex={1}>
                 <ScrollView>
                     <Box mt="50px">
                         <Box mb="40px">

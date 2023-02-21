@@ -7,9 +7,9 @@ import colors from "@helpers";
 
 export default function Ajuda() {
     return(
-        <SafeAreaView flex={1} backgroundColor="#f9f9f9">
+        <SafeAreaView flex={1}>
             <StatusBar style="auto"/>
-            <Container>
+            <Container flex={1}>
                 <Box mt="30px">
                     <Box pt="5px" pb="5px">
                         <TouchableOpacity>

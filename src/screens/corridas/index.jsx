@@ -217,7 +217,7 @@ export default function Corridas() {
     return(
         <SafeAreaView flex={1} backgroundColor="#f9f9f9">
             <StatusBar style="auto"/>
-            <Container>
+            <Container flex={1}>
                 <Box mt="30px">
                     <TitleGG>Corridas</TitleGG>
                 </Box>

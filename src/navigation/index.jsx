@@ -22,19 +22,24 @@ import Ajuda from "@screens/perfil/ajuda";
 import ShowBottomTabs from "./TabNavigation";
 import colors from "@helpers";
 
+import { useTheme } from "styled-components";
+
 const Stack = createStackNavigator();
 
 export default function Navigation() {
+
+    const theme = useTheme();
+
     const header = ({navigation}) => ({
-        headerStyle: {elevation: 0, backgroundColor: "#F9F9F9"},
-        headerTintColor: colors.cor6,
-        headerLeft: () => (<TouchableOpacity onPress={() => navigation.goBack()} style={{marginLeft: 16}}><Ionicons name="chevron-back-outline" size={40} color={colors.cor6} /></TouchableOpacity>)
+        headerStyle: {elevation: 0, backgroundColor: theme.background},
+        headerTintColor: theme.text,
+        headerLeft: () => (<TouchableOpacity onPress={() => navigation.goBack()} style={{marginLeft: 16}}><Ionicons name="chevron-back-outline" size={40} color={theme.icon} /></TouchableOpacity>)
     });
     const headerNoTitle = ({navigation}) => ({
         title: "",
-        headerStyle: {elevation: 0, backgroundColor: "#F9F9F9"},
-        headerTintColor: colors.cor6,
-        headerLeft: () => (<TouchableOpacity onPress={() => navigation.goBack()} style={{marginLeft: 16}}><Ionicons name="chevron-back-outline" size={40} color={colors.cor6} /></TouchableOpacity>)
+        headerStyle: {elevation: 0, backgroundColor: theme.background},
+        headerTintColor: theme.text,
+        headerLeft: () => (<TouchableOpacity onPress={() => navigation.goBack()} style={{marginLeft: 16}}><Ionicons name="chevron-back-outline" size={40} color={theme.icon} /></TouchableOpacity>)
     });
 
     return (

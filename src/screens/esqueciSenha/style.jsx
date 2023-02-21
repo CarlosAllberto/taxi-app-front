@@ -7,5 +7,5 @@ export const Card = styled.View`
     width: 100%;
     border-radius: 16px;
     border-width: ${props => props.focused ? "3px" : "1px"};
-    border-color: ${props => props.focused ? colors.cor1 : "lightgray"};
+    border-color: ${props => props.focused ? colors.cor1 : props.theme.cardBorder};
 `;

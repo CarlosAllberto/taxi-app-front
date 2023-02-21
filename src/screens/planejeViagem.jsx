@@ -24,7 +24,7 @@ export default function PlanejeViagem({navigation}) {
     const { partida, local } = formDados;
 
     return(
-        <SafeAreaView flex={1} backgroundColor="#f9f9f9">
+        <SafeAreaView flex={1}>
             <StatusBar style="auto"/>
             <Container flex={1}>
                 <Box>

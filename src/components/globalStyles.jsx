@@ -3,18 +3,22 @@ import colors from "@helpers";
 
 export const Container = styled.View`
     padding: 0 16px;
+    background: ${props => props.theme.background};
 `;
 
-export const Input = styled.TextInput`
-    background: ${props => props.focused ? "#f0e6ca" : "#e6e6e6"};
+export const Input = styled.TextInput.attrs(props => ({
+    placeholderTextColor: props.theme.inputPlaceholder
+    }))
+    `
+    background: ${props => props.focused ? props.theme.inputFocus : props.theme.input};
     padding: 10px 20px;
     border-radius: 8px;
     margin: 5px 0;
-    color: ${colors.cor6};
+    color: ${props => props.theme.text};
     font-size: 16px;
     border-width: 2px;
     border-style: solid;
-    border-color: ${props => props.focused ? colors.cor1 : "#e6e6e6"};
+    border-color: ${props => props.focused ? colors.cor1 : props.theme.inputBorder};
     width:          ${props => props.w  || "100%"};
     margin-left:    ${props => props.ml || 0     };
     margin-right:   ${props => props.mr || 0     };
@@ -42,7 +46,7 @@ export const Button = styled.TouchableOpacity`
 export const ButtonOutline = styled.TouchableOpacity`
     padding: 5px 15px;
     border-radius: 50px;
-    background: ${props => props.theme.background};
+    background: ${props => props.theme.buttonOutline};
     border: 2px solid ${colors.cor1};
     text-align: center;
     margin: 5px;
@@ -54,11 +58,13 @@ export const ButtonOutline = styled.TouchableOpacity`
 export const ButtonSocial = styled.TouchableOpacity`
     padding: 5px 20px;
     border-radius: 8px;
-    background: transparent;
     width: ${props => props.width || "auto"};
     text-align: center;
     margin: 5px 0;
-    border: 1px solid #e6e6e6;
+    border-width: 1px;
+    border-style: solid;
+    border-color: ${props => props.theme.buttonSocialBorder};
+    background: ${props => props.theme.buttonSocialBackground};
 `; 
 
 export const ButtonFull = styled.TouchableOpacity`
@@ -80,19 +86,19 @@ export const TextButton = styled.Text`
 `;
 
 export const Title = styled.Text`
-    color:     ${props => props.color || colors.cor6};
+    color:     ${props => props.theme.text};
     font-size: ${props => props.size  || "18px"     };
     font-weight: 600;
 `;
 
 export const TitleGG = styled.Text`
-    color: ${props => props.color || colors.cor6};
+    color: ${props => props.color || props.theme.text};
     font-size: 42px;
     font-weight: 600;
 `;
 
 export const Texto = styled.Text`
-    color:          ${props => props.color      || colors.cor6};
+    color:          ${props => props.color || props.theme.text};
     font-size:      ${props => props.fontSize   || "16px"     };
     font-weight:    ${props => props.fontWeight || 400        };
     margin:         ${props => props.m          || 0          };
@@ -125,7 +131,7 @@ export const Span = styled(Texto)`
 
 export const Line = styled.View`
     width: 100%;
-    background-color: #D9D9D9;
+    background-color: ${props => props.theme.line};
     height: 2px;
 `;
 
@@ -162,14 +168,14 @@ export const Box = styled.View`
 `;
 
 export const Paper = styled.View`
-    background-color: #FFFFFF;
+    background-color: ${props => props.theme.paper};
     padding: 10px 20px;
     width: 100%;
     border-radius: 8px;
 `;
 
 export const SwitchContainer = styled.View`
-    background: #E9E9E9;
+    background: ${props => props.theme.switchContainer};
     flex-direction: row;
     width: 100%;
     border-radius: 8px;

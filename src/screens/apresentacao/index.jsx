@@ -18,7 +18,7 @@ export default function Apresentacao({navigation}) {
     const page1 = (
         <>
             <ImageBackground style={{width: "100%", height: "100%"}} source={require("@assets/background.jpg")}>
-                <Container>
+                <Box style={{paddingLeft: 16, paddingRight: 16}}>
                 <Box mt="350px">
                     <TitleGG color="#fff">Bem Vindo ao</TitleGG>
                     <Span fontSize="100px" fontWeigth={500}>TAXI</Span>
@@ -33,14 +33,14 @@ export default function Apresentacao({navigation}) {
                         <MaterialCommunityIcons name="car-arrow-right" size={50} color={colors.cor6} />
                     </Button>
                 </Box>
-                </Container>
+                </Box>
             </ImageBackground>
         </>
     );
 
     const page2 = (
         <>
-        <Container>
+        <Container flex={1}>
         <Box flexDirection="row" justifyContent="center" mt="100px" mb="50px">
             <IMG w="60%" h="220px" source={require("@assets/taxi-logo.png")}/>
         </Box>
@@ -67,7 +67,7 @@ export default function Apresentacao({navigation}) {
 
     const page3 = (
         <>
-        <Container>
+        <Container flex={1}>
         <Box flexDirection="row" justifyContent="center" mt="100px" mb="50px">
             <IMG w="60%" h="220px" source={require("@assets/man.png")}/>
         </Box>
@@ -94,7 +94,7 @@ export default function Apresentacao({navigation}) {
 
     const page4 = (
         <>
-        <Container>
+        <Container flex={1}>
         <Box flexDirection="row" justifyContent="center" mt="100px" mb="50px">
             <IMG w="60%" h="220px" source={require("@assets/woman.png")}/>
         </Box>
@@ -120,7 +120,7 @@ export default function Apresentacao({navigation}) {
     );
 
     return(
-        <SafeAreaView flex={1} backgroundColor="#f9f9f9">
+        <SafeAreaView flex={1}>
             <StatusBar style="auto"/>
             {
             (() => {

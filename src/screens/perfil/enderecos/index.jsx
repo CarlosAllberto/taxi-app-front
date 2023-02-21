@@ -10,9 +10,9 @@ export default function Enderecos({navigation}) {
     const Navigate = (screen) => navigation.navigate(screen);
 
     return(
-        <SafeAreaView flex={1} backgroundColor="#f9f9f9">
+        <SafeAreaView flex={1}>
             <StatusBar style="auto" />
-            <Container>
+            <Container flex={1}>
                 <Box mt="30px">
                     <Box flexDirection="row" alignItems="center" mt="10px" mb="10px">
                         <Box mr="20px" flexDirection="row" alignItems="center">

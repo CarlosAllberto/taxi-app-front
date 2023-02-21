@@ -247,9 +247,9 @@ export default function EsqueciSenha() {
     );
 
     return(
-        <SafeAreaView flex={1} backgroundColor="#f9f9f9">
+        <SafeAreaView flex={1}>
             <StatusBar style="auto"/>
-            <Container>
+            <Container flex={1}>
                 <Box>
                     {(() => {
                         switch(contPage) {

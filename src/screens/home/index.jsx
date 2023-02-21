@@ -8,13 +8,21 @@ import colors from "@helpers";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import mapStyle from "@helpers/mapStyle";
+import { ThemeProvider } from 'styled-components';
+import { useColorScheme } from 'react-native';
+import { useTheme } from "styled-components";
 
 import * as Location from "expo-location";
 
-
 export default function Home({navigation}) {
 
+    const deviceTheme = useColorScheme();
+    const mapTheme = mapStyle[deviceTheme] || mapStyle.light; 
+
     const Navigate = (screen) => navigation.navigate(screen);
+
+    const theme = useTheme();
+    const themeBar = theme.tabBar;
 
     const [location, setLocation] = useState(null);
     const [errorMsg, setErrorMsg] = useState(null);
@@ -33,18 +41,18 @@ export default function Home({navigation}) {
     }, []);
 
     return(
-        <SafeAreaView flex={1} backgroundColor="#f9f9f9">
+        <SafeAreaView flex={1}>
             <StatusBar style="auto"/>
             <Box flex={1}>
               <MapView 
                 initialRegion={{
                 latitude: 37.78825,
                 longitude: -122.4324,
-                latitudeDelta: 0.003,
-                longitudeDelta: 0.003,
+                latitudeDelta: 0.003, //0.003
+                longitudeDelta: 0.003, //0.003
                 }}
                 provider={PROVIDER_GOOGLE}
-                customMapStyle={mapStyle}
+                customMapStyle={mapTheme}
                 style={styles.map}
               >
                 <Marker 
@@ -93,7 +101,7 @@ export default function Home({navigation}) {
                       </ButtonOutline>
                   </Box>
                 </ScrollView>
-                <Box style={styles.inputBox}>
+                <Box style={styles.inputBox(themeBar)}>
                   <Box flexDirection="row" alignItems="center">
                     <Input pl="40px" placeholder="Para onde vamos?" onFocus={() => Navigate("Planeje sua próxima viagem")}/>
                     <Box pl="5px" position="absolute">
@@ -113,8 +121,8 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%"
   },
-  inputBox: {
-    backgroundColor: "white",
+  inputBox: themeBar => ({
+    backgroundColor: themeBar,
     width: "100%",
     paddingTop: 20,
     paddingBottom: 20,
@@ -123,7 +131,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     elevation: 1,
-  },
+  }),
   searchBar: {
     width: "100%",
     position: "absolute",

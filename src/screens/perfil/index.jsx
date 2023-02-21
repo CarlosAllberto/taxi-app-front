@@ -5,14 +5,17 @@ import { ImagePerfil } from "@components/globalComponents";
 import colors from "@helpers";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import routes from "./routes";
+import { useTheme } from "styled-components";
 
 
 export default function Perfil({navigation}) {
 
     const Navigate = (screen) => navigation.navigate(screen);
 
+    const theme = useTheme();
+
     return(
-        <SafeAreaView flex={1} backgroundColor="#f9f9f9">
+        <SafeAreaView flex={1}>
             <StatusBar style="auto" />
             <Container flex={1}>
                 <Box mt="30px" flex={1}>
@@ -41,12 +44,12 @@ export default function Perfil({navigation}) {
                                     <Box flexDirection="row" alignItems="center" justifyContent="space-between" mt="5px" mb="5px">
                                         <Box flexDirection="row" alignItems="center">
                                             <Box mr="20px">
-                                                <Ionicons name={text.icon} size={30} color={text.name !== "Sair" ? colors.cor6 : "red"} />
+                                                <Ionicons name={text.icon} size={30} color={text.name !== "Sair" ? theme.icon : "red"} />
                                             </Box>
-                                            <Texto color={text.name !== "Sair" ? colors.cor6 : "red"}>{text.name}</Texto>
+                                            <Texto color={text.name !== "Sair" ? theme.text : "red"}>{text.name}</Texto>
                                         </Box>
                                         <Box>
-                                            <Ionicons name="chevron-forward-outline" size={30} color={colors.cor6} />
+                                            <Ionicons name="chevron-forward-outline" size={30} color={theme.icon} />
                                         </Box>
                                     </Box>
                                 </TouchableOpacity>
