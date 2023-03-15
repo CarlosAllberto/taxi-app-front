@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { SafeAreaView, ScrollView } from "react-native";
+import { SafeAreaView } from "react-native";
 import { StatusBar } from 'expo-status-bar';
 import { Box, TitleGG, Container, SwitchContainer, SwitchButton, TextButton, Line, IMG, Title, Texto, Paper, Status } from "@components/globalStyles";
 import colors from "@helpers"
