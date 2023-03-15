@@ -36,7 +36,7 @@ const light = [
         "elementType": "labels.icon",
         "stylers": [
             {
-                "visibility": "on"
+                "visibility": "off"
             }
         ]
     },
@@ -312,7 +312,7 @@ const dark = [
         "elementType": "labels.icon",
         "stylers": [
             {
-                "visibility": "on"
+                "visibility": "off"
             }
         ]
     },
@@ -348,10 +348,10 @@ const dark = [
         "elementType": "geometry",
         "stylers": [
             {
-                "color": colors.cor7 //f5f5f5
+                "color": colors.cor8 //f5f5f5
             },
             {
-                "lightness": 5
+                "lightness": 0
             }
         ]
     },
@@ -372,10 +372,10 @@ const dark = [
         "elementType": "geometry",
         "stylers": [
             {
-                "color": colors.cor2
+                "color": colors.cor8
             },
             {
-                "lightness": 21
+                "lightness": 0
             }
         ]
     },
@@ -384,10 +384,10 @@ const dark = [
         "elementType": "geometry",
         "stylers": [
             {
-                "color": colors.cor5
+                "color": colors.cor8
             },
             {
-                "lightness": 21
+                "lightness": 0
             }
         ]
     },
@@ -468,10 +468,10 @@ const dark = [
         "elementType": "geometry",
         "stylers": [
             {
-                "color": colors.cor5
+                "color": colors.cor9
             },
             {
-                "lightness": 18
+                "lightness": 10
             }
         ]
     },
@@ -483,7 +483,7 @@ const dark = [
                 "visibility": "on"
             },
             {
-                "color": colors.cor5
+                "color": colors.cor9
             }
         ]
     },
@@ -495,7 +495,7 @@ const dark = [
                 "color": "#ffffff"
             },
             {
-                "lightness": 16
+                "lightness": 10
             }
         ]
     },
@@ -507,7 +507,7 @@ const dark = [
                 "visibility": "on"
             },
             {
-                "color": colors.cor5
+                "color": colors.cor9
             },
             {
                 "weight": "1.21"

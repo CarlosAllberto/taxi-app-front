@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Box, IMG, Container, TitleGG, ButtonFull, TextButton, Input, Texto, TextLink, ButtonSocial } from "@components/globalStyles";
-import { SafeAreaView } from "react-native";
+import { SafeAreaView, TouchableOpacity } from "react-native";
 import { StatusBar } from 'expo-status-bar';
+import Ionicons from "@expo/vector-icons/Ionicons";
 
 export default function Cadastro({navigation}) {
 
@@ -20,6 +21,8 @@ export default function Cadastro({navigation}) {
     });
 
     const { nome, email, password } = formDados;
+
+    const [showPassword, setShowPassword] = useState(false);
 
     return(
         <SafeAreaView flex={1}>
@@ -58,14 +61,22 @@ export default function Cadastro({navigation}) {
                         />
                     </Box>
                     <Box>
-                        <Input
-                        onFocus={() => setInputFocus({...inputFocus, input2: true})}
-                        onBlur={() => setInputFocus({...inputFocus, input2: false})}
-                        focused={input2}
-                        placeholder="Senha"
-                        onChangeText={e => setFormDados({...formDados, password: e})}
-                        value={password}
-                        />
+                        <Box flexDirection="row" alignItems="center" justifyContent="flex-end">
+                            <Input
+                            onFocus={() => setInputFocus({...inputFocus, input2: true})}
+                            onBlur={() => setInputFocus({...inputFocus, input2: false})}
+                            focused={input2}
+                            placeholder="Senha"
+                            onChangeText={e => setFormDados({...formDados, password: e})}
+                            value={password}
+                            secureTextEntry={!showPassword}
+                            />
+                            <Box pr="10px" position="absolute">
+                                <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
+                                    <Ionicons name={showPassword ? "eye-off" : "eye"} size={30} color="gray"/>
+                                </TouchableOpacity>
+                            </Box>
+                        </Box>
                     </Box>
                     <Box flexDirection="row" justifyContent="center"
                     mt="25px" alignItems="center">
@@ -74,7 +85,11 @@ export default function Cadastro({navigation}) {
                             <TextLink style={{textAlign: "center"}} onPress={() => Navigate("Login")}>Login</TextLink>
                         </Box>                        
                     </Box>
-                    <Box mt="30px">
+                </Box>
+            </Container>
+            <Box position="absolute" bottom={30} w="100%">
+                <Container>
+                    <Box>
                         <ButtonFull onPress={() => Navigate("Configuração da conta")}>
                             <TextButton>Cadastrar</TextButton>
                         </ButtonFull>
@@ -82,8 +97,8 @@ export default function Cadastro({navigation}) {
                     <Box flexDirection="row" justifyContent="center">
                         <Texto>Ao criar sua conta, você concorda com nossos <TextLink onPress={() => Navigate("Politica de Privacidade")}>termos de uso.</TextLink></Texto>
                     </Box>
-                </Box>
-            </Container>
+                </Container>
+            </Box>
         </SafeAreaView>
     );
 }

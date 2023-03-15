@@ -5,6 +5,38 @@ import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import colors from "@helpers";
 
 export default function Carteira() {
+
+    const transacoes = [
+        {
+            nome: "Carlos Alberto",
+            data: "Dec 19, 2023",
+            hora: "14:00",
+            valor: "R$ 14,00",
+            tipo: "Pago"
+        },
+        {
+            nome: "Carlos Alberto",
+            data: "Dec 19, 2023",
+            hora: "14:00",
+            valor: "R$ 07,00",
+            tipo: "Recebido"
+        },
+        {
+            nome: "Carlos Alberto",
+            data: "Dec 19, 2023",
+            hora: "14:00",
+            valor: "R$ 14,00",
+            tipo: "Pago"
+        },
+        {
+            nome: "Carlos Alberto",
+            data: "Dec 19, 2023",
+            hora: "14:00",
+            valor: "R$ 07,00",
+            tipo: "Recebido"
+        },
+    ]
+
     return(
         <SafeAreaView flex={1}>
             <StatusBar style="auto" />
@@ -13,54 +45,46 @@ export default function Carteira() {
                     <TitleGG>Transações</TitleGG>
                 </Box>
                 <Box>
-                    <Box pt="15px" pb="15px">
-                        <Box flexDirection="row" alignItems="center">
-                            <Box mr="20px">
-                                <IMG w="70px" h="70px" radius="50px" source={require("@assets/IMG_PERFIL.jpg")} />
-                            </Box>
-                            <Box>
-                                <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "77%"}}>
-                                    <Title>Carlos Alberto</Title>
-                                    <Title>R$ 14,00</Title>
-                                </Box>
-                                <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "77%"}}>
-                                    <Box>
-                                        <Texto>Dec 19, 2024 | 14:30</Texto>
+                    {transacoes.map((text, index) => {
+
+                        let iconName;
+                        let iconColor;
+
+                        if(text.tipo === "Pago") {
+                            iconName = "arrow-up-bold-box";
+                            iconColor = "red";
+                        } else {
+                            iconName = "arrow-down-bold-box";
+                            iconColor = colors.cor4;
+                        }
+
+                        return(
+                            <Box key={index} pt="15px" pb="15px">
+                                <Box flexDirection="row" alignItems="center">
+                                    <Box mr="20px">
+                                        <IMG w="70px" h="70px" radius="50px" source={require("@assets/IMG_PERFIL.jpg")} />
                                     </Box>
-                                    <Box flexDirection="row" alignItems="center">
-                                        <Texto>Pago</Texto>
-                                        <Box pl="5px">
-                                            <MaterialCommunityIcons name="arrow-up-bold-box" size={20} color="red" />
+                                    <Box>
+                                        <Box flexDirection="row" alignItems="center" justifyContent="space-between" w="77%">
+                                            <Title>{text.nome}</Title>
+                                            <Title>{text.valor}</Title>
+                                        </Box>
+                                        <Box flexDirection="row" alignItems="center" justifyContent="space-between" w="77%">
+                                            <Box>
+                                                <Texto>{text.data} | {text.hora}</Texto>
+                                            </Box>
+                                            <Box flexDirection="row" alignItems="center">
+                                                <Texto>{text.tipo}</Texto>
+                                                <Box pl="5px">
+                                                    <MaterialCommunityIcons name={iconName} size={20} color={iconColor} />
+                                                </Box>
+                                            </Box>
                                         </Box>
                                     </Box>
                                 </Box>
                             </Box>
-                        </Box>
-                    </Box>
-                    <Box pt="15px" pb="15px">
-                        <Box flexDirection="row" alignItems="center">
-                            <Box mr="20px">
-                                <IMG w="70px" h="70px" radius="50px" source={require("@assets/IMG_PERFIL.jpg")} />
-                            </Box>
-                            <Box>
-                                <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "77%"}}>
-                                    <Title>Carlos Alberto</Title>
-                                    <Title>R$ 05,00</Title>
-                                </Box>
-                                <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "77%"}}>
-                                    <Box>
-                                        <Texto>Dec 19, 2024 | 14:30</Texto>
-                                    </Box>
-                                    <Box flexDirection="row" alignItems="center">
-                                        <Texto>Recebido</Texto>
-                                        <Box pl="5px">
-                                            <MaterialCommunityIcons name="arrow-down-bold-box" size={20} color={colors.cor4} />
-                                        </Box>
-                                    </Box>
-                                </Box>
-                            </Box>
-                        </Box>
-                    </Box>
+                        );
+                    })}
                 </Box>
             </Container>
         </SafeAreaView>

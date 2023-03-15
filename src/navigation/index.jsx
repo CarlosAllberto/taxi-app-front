@@ -18,6 +18,8 @@ import Notificacoes from "@screens/perfil/notificacoes";
 import Seguranca from "@screens/perfil/seguranca";
 import ConvidarAmigos from "@screens/perfil/convidarAmigos";
 import PlanejeViagem from "@screens/planejeViagem";
+import EscolherCarro from "@screens/escolherCarro";
+import ProcurarMotorista from "@screens/procurarMotorista";
 import Ajuda from "@screens/perfil/ajuda";
 import ShowBottomTabs from "./TabNavigation";
 import colors from "@helpers";
@@ -50,8 +52,9 @@ export default function Navigation() {
             <Stack.Screen options={headerNoTitle} name="Cadastro" component={Cadastro} />
             <Stack.Screen options={header} name="Esqueci a Senha" component={EsqueciSenha} />
             <Stack.Screen options={header} name="Configuração da conta" component={ConfiguracaoConta} />
-            
             <Stack.Screen options={header} name="Planeje sua próxima viagem" component={PlanejeViagem} />
+            <Stack.Screen options={{headerShown: false}} name="Escolher Carro" component={EscolherCarro} />
+            <Stack.Screen options={header} name="Procurando Motorista" component={ProcurarMotorista} />
             <Stack.Screen options={header} name="Editar Conta" component={EditarConta} />
             <Stack.Screen options={header} name="Politica de Privacidade" component={PoliticaPrivacidade} />
             <Stack.Screen options={header} name="Endereços" component={Enderecos} />

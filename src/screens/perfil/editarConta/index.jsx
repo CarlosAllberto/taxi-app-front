@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Box, Container, ButtonFull, TextButton, Input } from "@components/globalStyles";
 import { SafeAreaView } from "react-native";
 import { StatusBar } from 'expo-status-bar';
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+
 
 export default function EditarConta({navigation}) {
 
@@ -55,24 +57,34 @@ export default function EditarConta({navigation}) {
                         />
                     </Box>
                     <Box>
-                        <Input
-                        onFocus={() => setInputFocus({...inputFocus, input3: true})}
-                        onBlur={() => setInputFocus({...inputFocus, input3: false})}
-                        focused={input3}
-                        placeholder="Data de nascimento"
-                        onChangeText={e => setFormDados({...formDados, data: e})}
-                        value={data}
-                        />
+                        <Box flexDirection="row" alignItems="center" justifyContent="flex-end">
+                            <Input
+                            onFocus={() => setInputFocus({...inputFocus, input3: true})}
+                            onBlur={() => setInputFocus({...inputFocus, input3: false})}
+                            focused={input3}
+                            placeholder="Data de nascimento"
+                            onChangeText={e => setFormDados({...formDados, data: e})}
+                            value={data}
+                            />
+                            <Box pr="10px" position="absolute">
+                                <MaterialCommunityIcons name="calendar-month-outline" size={30} color="gray"/>
+                            </Box>
+                        </Box>
                     </Box>
                     <Box>
-                        <Input
-                        onFocus={() => setInputFocus({...inputFocus, input4: true})}
-                        onBlur={() => setInputFocus({...inputFocus, input4: false})}
-                        focused={input4}
-                        placeholder="Email"
-                        onChangeText={e => setFormDados({...formDados, email: e})}
-                        value={email}
-                        />
+                        <Box flexDirection="row" alignItems="center" justifyContent="flex-end">
+                            <Input
+                            onFocus={() => setInputFocus({...inputFocus, input4: true})}
+                            onBlur={() => setInputFocus({...inputFocus, input4: false})}
+                            focused={input4}
+                            placeholder="Email"
+                            onChangeText={e => setFormDados({...formDados, email: e})}
+                            value={email}
+                            />
+                            <Box pr="10px" position="absolute">
+                                <MaterialCommunityIcons name="email-outline" size={30} color="gray"/>
+                            </Box>
+                        </Box>
                     </Box>
                     <Box>
                         <Input
@@ -94,13 +106,15 @@ export default function EditarConta({navigation}) {
                         value={sexo}
                         />
                     </Box>
-                    <Box mt="25px">
-                        <ButtonFull onPress={() => Navigate("Home")}>
-                            <TextButton>Atualizar</TextButton>
-                        </ButtonFull>
-                    </Box>
                 </Box>
             </Container>
+            <Box position="absolute" bottom={30} w="100%">
+                <Container>
+                    <ButtonFull onPress={() => Navigate("Home")}>
+                        <TextButton>Atualizar</TextButton>
+                    </ButtonFull>
+                </Container>
+            </Box>
         </SafeAreaView>
     );
 }

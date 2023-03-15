@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { Box, IMG, Container, TitleGG, ButtonFull, TextButton, Input, Texto, TextLink, ButtonSocial } from "@components/globalStyles";
-import { SafeAreaView, KeyboardAvoidingView, Platform } from "react-native";
+import { SafeAreaView, TouchableOpacity } from "react-native";
 import { StatusBar } from 'expo-status-bar';
+import Ionicons from "@expo/vector-icons/Ionicons";
+
 
 export default function Login({navigation}) {
 
@@ -20,6 +22,8 @@ export default function Login({navigation}) {
     });
 
     const { email, password } = formDados;
+
+    const [showPassword, setShowPassword] = useState(false);
 
     return(
         <SafeAreaView flex={1}>
@@ -46,11 +50,7 @@ export default function Login({navigation}) {
                 <Box mt="30px" mb="30px" flexDirection="row" justifyContent="center">
                     <Texto>ou</Texto>
                 </Box>
-                <Box flex={1}>
-                    <KeyboardAvoidingView
-                    flex={1}
-                    behavior="padding"
-                    >
+                <Box>
                     <Box>
                         <Input 
                         onFocus={() => setInputFocus({...inputFocus, input1: true})}
@@ -62,14 +62,22 @@ export default function Login({navigation}) {
                         />
                     </Box>
                     <Box>
-                        <Input
-                        onFocus={() => setInputFocus({...inputFocus, input2: true})}
-                        onBlur={() => setInputFocus({...inputFocus, input2: false})}
-                        focused={input2}
-                        placeholder="Senha"
-                        onChangeText={e => setFormDados({...formDados, password: e})}
-                        value={password}
-                        />
+                        <Box flexDirection="row" alignItems="center" justifyContent="flex-end">
+                            <Input
+                            onFocus={() => setInputFocus({...inputFocus, input2: true})}
+                            onBlur={() => setInputFocus({...inputFocus, input2: false})}
+                            focused={input2}
+                            placeholder="Senha"
+                            onChangeText={e => setFormDados({...formDados, password: e})}
+                            value={password}
+                            secureTextEntry={!showPassword}
+                            />
+                            <Box pr="10px" position="absolute">
+                                <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
+                                    <Ionicons name={showPassword ? "eye-off" : "eye"} size={30} color="gray"/>
+                                </TouchableOpacity>
+                            </Box>
+                        </Box>
                     </Box>
                     <Box flexDirection="row" justifyContent="flex-end">
                         <TextLink onPress={() => Navigate("Esqueci a Senha")}>Esqueci a Senha</TextLink>
@@ -81,14 +89,15 @@ export default function Login({navigation}) {
                             <TextLink style={{textAlign: "center"}} onPress={() => Navigate("Cadastro")}>Criar conta</TextLink>    
                         </Box>                    
                     </Box>
-                    <Box mt="25px">
-                        <ButtonFull onPress={() => Navigate("Home")}>
-                            <TextButton>Login</TextButton>
-                        </ButtonFull>
-                    </Box>
-                    </KeyboardAvoidingView>
                 </Box>
             </Container>
+            <Box position="absolute" bottom={30} w="100%">
+                <Container>
+                    <ButtonFull onPress={() => Navigate("Home")}>
+                        <TextButton>Login</TextButton>
+                    </ButtonFull>
+                </Container>
+            </Box>
         </SafeAreaView>
     );
 }

@@ -10,172 +10,129 @@ export default function Comunicacao() {
 
     const [contPage, setContPage] = useState(1);
 
+    const mensagens = [
+        {
+            nome: "Carlos Alberto",
+            msg: "Olá, tudo bem?",
+            notificacao: 3,
+            hora: "14:30"
+        },
+        {
+            nome: "Carlos Alberto",
+            msg: "Olá, tudo bem?",
+            notificacao: 3,
+            hora: "14:30"
+        },
+        {
+            nome: "Carlos Alberto",
+            msg: "Olá, tudo bem?",
+            notificacao: 3,
+            hora: "14:30"
+        },
+        {
+            nome: "Carlos Alberto",
+            msg: "Olá, tudo bem?",
+            notificacao: 3,
+            hora: "14:30"
+        },
+    ];
+
+    const ligacoes = [
+        {
+            nome: "Carlos Alberto",
+            tipo: "Recebida",
+            data: "Dec 19, 2023"
+        },
+        {
+            nome: "Carlos Alberto",
+            tipo: "Efetuada",
+            data: "Dec 19, 2023"
+        },
+        {
+            nome: "Carlos Alberto",
+            tipo: "Perdida",
+            data: "Dec 19, 2023"
+        },
+    ]
+
     const page1 = (
         <>
-            <Box pt="5px" pb="5px">
-                <Paper>
-                    <Box flexDirection="row" alignItems="center">
-                        <Box mr="20px">
-                            <IMG w="70px" h="70px" radius="50px" source={require("@assets/IMG_PERFIL.jpg")} />
-                        </Box>
-                        <Box>
-                            <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "73%"}}>
-                                <Title>Carlos Alberto</Title>
-                                <NotificationSms>
-                                    <Texto pt="0px" pb="0px" fontWeight={500}>2</Texto>
-                                </NotificationSms>
+            {mensagens.map((text, index) => {
+                return(
+                   <Box key={index} pt="5px" pb="5px">
+                        <Paper>
+                            <Box flexDirection="row" alignItems="center">
+                                <Box mr="20px">
+                                    <IMG w="70px" h="70px" radius="50px" source={require("@assets/IMG_PERFIL.jpg")} />
+                                </Box>
+                                <Box>
+                                    <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "73%"}}>
+                                        <Title>{text.nome}</Title>
+                                        <NotificationSms>
+                                            <Texto pt="0px" pb="0px" fontWeight={500}>
+                                                {text.notificacao}
+                                            </Texto>
+                                        </NotificationSms>
+                                    </Box>
+                                    <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "73%"}}>
+                                        <Texto>{text.msg}</Texto>
+                                        <Texto>{text.hora}</Texto>
+                                    </Box>
+                                </Box>
                             </Box>
-                            <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "73%"}}>
-                                <Texto>Olá, tudo bem?</Texto>
-                                <Texto>14:30</Texto>
-                            </Box>
-                        </Box>
-                    </Box>
-                </Paper>
-            </Box>
-            <Box pt="5px" pb="5px">
-                <Paper>
-                    <Box flexDirection="row" alignItems="center">
-                        <Box mr="20px">
-                            <IMG w="70px" h="70px" radius="50px" source={require("@assets/IMG_PERFIL.jpg")} />
-                        </Box>
-                        <Box>
-                            <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "73%"}}>
-                                <Title>Carlos Alberto</Title>
-                                <NotificationSms>
-                                    <Texto pt="0px" pb="0px" fontWeight={500}>3</Texto>
-                                </NotificationSms>
-                            </Box>
-                            <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "73%"}}>
-                                <Texto>Olá, tudo bem?</Texto>
-                                <Texto>14:30</Texto>
-                            </Box>
-                        </Box>
-                    </Box>
-                </Paper>
-            </Box>
-            <Box pt="5px" pb="5px">
-                <Paper>
-                    <Box flexDirection="row" alignItems="center">
-                        <Box mr="20px">
-                            <IMG w="70px" h="70px" radius="50px" source={require("@assets/IMG_PERFIL.jpg")} />
-                        </Box>
-                        <Box>
-                            <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "73%"}}>
-                                <Title>Carlos Alberto</Title>
-                                <NotificationSms>
-                                    <Texto pt="0px" pb="0px" fontWeight={500}>4</Texto>
-                                </NotificationSms>
-                            </Box>
-                            <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "73%"}}>
-                                <Texto>Olá, tudo bem?</Texto>
-                                <Texto>14:30</Texto>
-                            </Box>
-                        </Box>
-                    </Box>
-                </Paper>
-            </Box>
-            <Box pt="5px" pb="5px">
-                <Paper>
-                    <Box flexDirection="row" alignItems="center">
-                        <Box mr="20px">
-                            <IMG w="70px" h="70px" radius="50px" source={require("@assets/IMG_PERFIL.jpg")} />
-                        </Box>
-                        <Box>
-                            <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "73%"}}>
-                                <Title>Carlos Alberto</Title>
-                                <NotificationSms>
-                                    <Texto pt="0px" pb="0px" fontWeight={500}>1</Texto>
-                                </NotificationSms>
-                            </Box>
-                            <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "73%"}}>
-                                <Texto>Olá, tudo bem?</Texto>
-                                <Texto>14:30</Texto>
-                            </Box>
-                        </Box>
-                    </Box>
-                </Paper>
-            </Box>
+                        </Paper>
+                    </Box> 
+                );
+            })}
         </>
     );
 
     const page2 = (
         <>
-            <Box pt="5px" pb="5px">
-                <Paper>
-                    <Box flexDirection="row" alignItems="center">
-                        <Box mr="20px">
-                            <IMG w="70px" h="70px" radius="50px" source={require("@assets/IMG_PERFIL.jpg")} />
-                        </Box>
-                        <Box flexDirection="row" justifyContent="space-between" style={{width: "73%"}}>
-                            <Box>
-                                <Title>Carlos Alberto</Title>
-                                <Box flexDirection="row" alignItems="center">
-                                    <Box pr="5px">
-                                        <MaterialCommunityIcons name="arrow-down-bold-box" size={20} color={colors.cor4} />
+            {ligacoes.map((text, index) => {
+
+                let iconName;
+                let iconColor;
+
+                if(text.tipo === "Efetuada") {
+                    iconName = "arrow-up-bold-box";
+                    iconColor = "#8ef08e";
+                } else if(text.tipo === "Recebida") {
+                    iconName = "arrow-down-bold-box"; 
+                    iconColor = colors.cor4;
+                } else {
+                    iconName = "close-box";
+                    iconColor = "red";
+                }
+
+                return(
+                    <Box key={index} pt="5px" pb="5px">
+                        <Paper>
+                            <Box flexDirection="row" alignItems="center">
+                                <Box mr="20px">
+                                    <IMG w="70px" h="70px" radius="50px" source={require("@assets/IMG_PERFIL.jpg")} />
+                                </Box>
+                                <Box flexDirection="row" justifyContent="space-between" style={{width: "73%"}}>
+                                    <Box>
+                                        <Title>{text.nome}</Title>
+                                        <Box flexDirection="row" alignItems="center">
+                                            <Box pr="5px">
+                                                <MaterialCommunityIcons name={iconName} size={20} color={iconColor} />
+                                            </Box>
+                                            <Texto>{text.tipo} | {text.data}</Texto>
+                                        </Box>
                                     </Box>
-                                    <Texto>Recebida | Dec 19, 2024</Texto>
+                                    <Box flexDirection="row" alignItems="center">
+                                        <TouchableOpacity>
+                                            <Feather name="phone" size={30} color={colors.cor1} />
+                                        </TouchableOpacity>
+                                    </Box>
                                 </Box>
                             </Box>
-                            <Box flexDirection="row" alignItems="center">
-                                <TouchableOpacity>
-                                    <Feather name="phone" size={30} color={colors.cor1} />
-                                </TouchableOpacity>
-                            </Box>
-                        </Box>
+                        </Paper>
                     </Box>
-                </Paper>
-            </Box>
-            <Box pt="5px" pb="5px">
-                <Paper>
-                    <Box flexDirection="row" alignItems="center">
-                        <Box mr="20px">
-                            <IMG w="70px" h="70px" radius="50px" source={require("@assets/IMG_PERFIL.jpg")} />
-                        </Box>
-                        <Box flexDirection="row" justifyContent="space-between" style={{width: "73%"}}>
-                            <Box>
-                                <Title>Carlos Alberto</Title>
-                                <Box flexDirection="row" alignItems="center">
-                                    <Box pr="5px">
-                                        <MaterialCommunityIcons name="arrow-up-bold-box" size={20} color="#8ef08e" />
-                                    </Box>
-                                    <Texto>Efetuada | Dec 19, 2024</Texto>
-                                </Box>
-                            </Box>
-                            <Box flexDirection="row" alignItems="center">
-                                <TouchableOpacity>
-                                    <Feather name="phone" size={30} color={colors.cor1} />
-                                </TouchableOpacity>
-                            </Box>
-                        </Box>
-                    </Box>
-                </Paper>
-            </Box>
-            <Box pt="5px" pb="5px">
-                <Paper>
-                    <Box flexDirection="row" alignItems="center">
-                        <Box mr="20px">
-                            <IMG w="70px" h="70px" radius="50px" source={require("@assets/IMG_PERFIL.jpg")} />
-                        </Box>
-                        <Box flexDirection="row" justifyContent="space-between" style={{width: "73%"}}>
-                            <Box>
-                                <Title>Carlos Alberto</Title>
-                                <Box flexDirection="row" alignItems="center">
-                                    <Box pr="5px">
-                                        <MaterialCommunityIcons name="close-box" size={20} color="red" />
-                                    </Box>
-                                    <Texto>Perdida | Dec 19, 2024</Texto>
-                                </Box>
-                            </Box>
-                            <Box flexDirection="row" alignItems="center">
-                                <TouchableOpacity>
-                                    <Feather name="phone" size={30} color={colors.cor1} />
-                                </TouchableOpacity>
-                            </Box>
-                        </Box>
-                    </Box>
-                </Paper>
-            </Box>
+                );
+            })}
         </>
     );
 
@@ -195,6 +152,8 @@ export default function Comunicacao() {
                             <TextButton size="16px" color={contPage === 2 ? "#fff" : colors.cor5}>Ligações</TextButton>
                         </SwitchButton>
                     </SwitchContainer>
+                </Box>
+                <Box mt="20px">
                     <Line />
                 </Box>
                 <Box>

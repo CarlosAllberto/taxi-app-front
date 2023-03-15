@@ -2,7 +2,6 @@ import { SafeAreaView, TouchableOpacity, ScrollView } from "react-native";
 import { StatusBar } from 'expo-status-bar';
 import { Box, TitleGG, Container, Title, Texto, Line } from "@components/globalStyles";
 import { ImagePerfil } from "@components/globalComponents";
-import colors from "@helpers";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import routes from "./routes";
 import { useTheme } from "styled-components";

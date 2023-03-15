@@ -18,14 +18,14 @@ export const ImagePerfil = ({source}) => {
     );
 }
 
-export const SearchBar = () => {
+export const SearchBar = ({Navigate}) => {
 
     return(
         <Box flexDirection="row" justifyContent="flex-end" backgroundColor="transparent">
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity style={styles.button} onPress={() => Navigate("Planeje sua próxima viagem")}>
                 <Ionicons name="search-outline" size={30} color={colors.cor6}/>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity style={styles.button} onPress={() => Navigate("ComunicacaoTab")}>
                 <Ionicons name="notifications-outline" size={30} color={colors.cor6}/>
             </TouchableOpacity>
         </Box>

@@ -7,11 +7,19 @@ import colors from "@helpers";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import mapStyle from "@helpers/mapStyle";
 import * as Location from "expo-location";
+import { useColorScheme } from 'react-native';
+import { useTheme } from "styled-components";
 
 
 export default function AdicionarEndereco({navigation}) {
 
     const Navigate = (screen) => navigation.navigate(screen);
+
+    const deviceTheme = useColorScheme();
+    const mapTheme = mapStyle[deviceTheme] || mapStyle.light;
+
+    const theme = useTheme();
+    const themeBar = theme.tabBar;
 
     const [inputFocus, setInputFocus] = useState({
         input1: false,
@@ -44,11 +52,11 @@ export default function AdicionarEndereco({navigation}) {
                 initialRegion={{
                 latitude: 37.78825,
                 longitude: -122.4324,
-                latitudeDelta: 0.003,
-                longitudeDelta: 0.003,
+                latitudeDelta: 0.005,
+                longitudeDelta: 0.005,
                 }}
                 provider={PROVIDER_GOOGLE}
-                customMapStyle={mapStyle}
+                customMapStyle={mapTheme}
                 style={styles.map}
               >
                 <Marker 
@@ -60,8 +68,8 @@ export default function AdicionarEndereco({navigation}) {
                   <IMG w="80px" h="80px" radius="100px" style={styles.imageMarker} source={require("@assets/IMG_PERFIL.jpg")} />
                 </Marker>
               </MapView>
-              <Box style={styles.searchBar}>
-                <Box style={styles.inputBox}>
+              <Box position="absolute" bottom={0} w="100%">
+                <Box style={styles.inputBox(themeBar)}>
                   <Box>
                     <TitleGG>Detalhes</TitleGG>
                   </Box>
@@ -114,8 +122,8 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "60%"
   },
-  inputBox: {
-    backgroundColor: "white",
+  inputBox: themeBar => ({
+    backgroundColor: themeBar,
     width: "100%",
     paddingTop: 20,
     paddingBottom: 20,
@@ -124,12 +132,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     elevation: 1,
-  },
-  searchBar: {
-    width: "100%",
-    position: "absolute",
-    bottom: 0,
-  },
+  }),
   imageMarker: {
     borderWidth: 2,
     borderColor: colors.cor1,

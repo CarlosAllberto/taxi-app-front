@@ -3,6 +3,8 @@ import { Box, Container, ButtonFull, TextButton, Input, Texto, InputCode } from 
 import { ImagePerfil } from "@components/globalComponents";
 import { SafeAreaView } from "react-native";
 import { StatusBar } from 'expo-status-bar';
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+
 
 export default function ConfiguracaoConta({navigation}) {
 
@@ -53,173 +55,189 @@ export default function ConfiguracaoConta({navigation}) {
 
     const page1 = (
         <>
-            <Box mt="30px" mb="50px" flexDirection="row" justifyContent="center">
-                <ImagePerfil source={require("@assets/IMG_PERFIL.jpg")}/>
-            </Box>
-            <Box>
-                <Box>
-                    <Input
-                    onFocus={() => setInputFocus({...inputFocus, input1: true})}
-                    onBlur={() => setInputFocus({...inputFocus, input1: false})}
-                    focused={input1}
-                    placeholder="Nome completo"
-                    onChangeText={e => setFormDados({...formDados, nome: e})}
-                    value={nome}
-                    />
+            <Container flex={1}>
+                <Box mt="30px" mb="50px" flexDirection="row" justifyContent="center">
+                    <ImagePerfil source={require("@assets/IMG_PERFIL.jpg")}/>
                 </Box>
                 <Box>
-                    <Input
-                    onFocus={() => setInputFocus({...inputFocus, input2: true})}
-                    onBlur={() => setInputFocus({...inputFocus, input2: false})}
-                    focused={input2}
-                    placeholder="Apelido"
-                    onChangeText={e => setFormDados({...formDados, apelido: e})}
-                    value={apelido}
-                    />
+                    <Box>
+                        <Input
+                        onFocus={() => setInputFocus({...inputFocus, input1: true})}
+                        onBlur={() => setInputFocus({...inputFocus, input1: false})}
+                        focused={input1}
+                        placeholder="Nome completo"
+                        onChangeText={e => setFormDados({...formDados, nome: e})}
+                        value={nome}
+                        />
+                    </Box>
+                    <Box>
+                        <Input
+                        onFocus={() => setInputFocus({...inputFocus, input2: true})}
+                        onBlur={() => setInputFocus({...inputFocus, input2: false})}
+                        focused={input2}
+                        placeholder="Apelido"
+                        onChangeText={e => setFormDados({...formDados, apelido: e})}
+                        value={apelido}
+                        />
+                    </Box>
+                    <Box>
+                        <Box flexDirection="row" alignItems="center" justifyContent="flex-end">
+                            <Input
+                            onFocus={() => setInputFocus({...inputFocus, input3: true})}
+                            onBlur={() => setInputFocus({...inputFocus, input3: false})}
+                            focused={input3}
+                            placeholder="Data de nascimento"
+                            onChangeText={e => setFormDados({...formDados, data: e})}
+                            value={data}
+                            />
+                            <Box pr="10px" position="absolute">
+                                <MaterialCommunityIcons name="calendar-month-outline" size={30} color="gray"/>
+                            </Box>
+                        </Box>
+                    </Box>
+                    <Box>
+                        <Box flexDirection="row" alignItems="center" justifyContent="flex-end">
+                            <Input
+                            onFocus={() => setInputFocus({...inputFocus, input4: true})}
+                            onBlur={() => setInputFocus({...inputFocus, input4: false})}
+                            focused={input4}
+                            placeholder="Email"
+                            onChangeText={e => setFormDados({...formDados, email: e})}
+                            value={email}
+                            />
+                            <Box pr="10px" position="absolute">
+                                <MaterialCommunityIcons name="email-outline" size={30} color="gray"/>
+                            </Box>
+                        </Box>
+                    </Box>
+                    <Box>
+                        <Input
+                        onFocus={() => setInputFocus({...inputFocus, input5: true})}
+                        onBlur={() => setInputFocus({...inputFocus, input5: false})}
+                        focused={input5}
+                        placeholder="Numero"
+                        onChangeText={e => setFormDados({...formDados, numero: e})}
+                        value={numero}
+                        />
+                    </Box>
+                    <Box>
+                        <Input
+                        onFocus={() => setInputFocus({...inputFocus, input6: true})}
+                        onBlur={() => setInputFocus({...inputFocus, input6: false})}
+                        focused={input6}
+                        placeholder="Sexo"
+                        onChangeText={e => setFormDados({...formDados, sexo: e})}
+                        value={sexo}
+                        />
+                    </Box>
                 </Box>
-                <Box>
-                    <Input
-                    onFocus={() => setInputFocus({...inputFocus, input3: true})}
-                    onBlur={() => setInputFocus({...inputFocus, input3: false})}
-                    focused={input3}
-                    placeholder="Data de nascimento"
-                    onChangeText={e => setFormDados({...formDados, data: e})}
-                    value={data}
-                    />
-                </Box>
-                <Box>
-                    <Input
-                    onFocus={() => setInputFocus({...inputFocus, input4: true})}
-                    onBlur={() => setInputFocus({...inputFocus, input4: false})}
-                    focused={input4}
-                    placeholder="Email"
-                    onChangeText={e => setFormDados({...formDados, email: e})}
-                    value={email}
-                    />
-                </Box>
-                <Box>
-                    <Input
-                    onFocus={() => setInputFocus({...inputFocus, input5: true})}
-                    onBlur={() => setInputFocus({...inputFocus, input5: false})}
-                    focused={input5}
-                    placeholder="Numero"
-                    onChangeText={e => setFormDados({...formDados, numero: e})}
-                    value={numero}
-                    />
-                </Box>
-                <Box>
-                    <Input
-                    onFocus={() => setInputFocus({...inputFocus, input6: true})}
-                    onBlur={() => setInputFocus({...inputFocus, input6: false})}
-                    focused={input6}
-                    placeholder="Sexo"
-                    onChangeText={e => setFormDados({...formDados, sexo: e})}
-                    value={sexo}
-                    />
-                </Box>
-                <Box mt="25px">
+            </Container>
+            <Box position="absolute" bottom={30} w="100%">
+                <Container>
                     <ButtonFull onPress={() => setContPage(2)}>
                         <TextButton>Continuar</TextButton>
                     </ButtonFull>
-                </Box>
+                </Container>
             </Box>
         </>
     );
 
     const page2 = (
         <>
-            <Box mt="100px" mb="30px" flexDirection="row" justifyContent="center">
-                <Texto>
-                    Adicione um número PIN para tornar sua conta mais segura
-                </Texto>
-            </Box>
-            <Box>
-
-                <Box justifyContent="center" flexDirection="row">
-                    <InputCode
-                    onFocus={() => setInputFocus({...inputFocus, inputCode1: true})}
-                    onBlur={() => setInputFocus({...inputFocus, inputCode1: false})}
-                    focused={inputCode1}
-                    ref={ref_input1}
-                    autoFocus={true}
-                    type="text"
-                    placeholder="-"
-                    maxLength={1}
-                    secureTextEntry={true}
-                    value={code1}
-                    onChangeText={e => {
-                        setCode({...code, code1: e});
-                        if (code1.length === 0) {
-                        ref_input2.current.focus()
-                        } else {
-                        //pass
-                        }
-                    }}
-                    />
-                    <InputCode
-                    onFocus={() => setInputFocus({...inputFocus, inputCode2: true})}
-                    onBlur={() => setInputFocus({...inputFocus, inputCode2: false})}
-                    focused={inputCode2}
-                    ref={ref_input2}
-                    type="text"
-                    placeholder="-"
-                    maxLength={1}
-                    secureTextEntry={true}
-                    value={code2}
-                    onChangeText={e => {
-                        setCode({...code, code2: e});
-                        if (code2.length === 0) {
-                        ref_input3.current.focus()
-                        } else {
-                        ref_input1.current.focus()
-                        }
-                    }}
-                    />
-                    <InputCode
-                    onFocus={() => setInputFocus({...inputFocus, inputCode3: true})}
-                    onBlur={() => setInputFocus({...inputFocus, inputCode3: false})}
-                    focused={inputCode3}
-                    ref={ref_input3}
-                    type="text"
-                    placeholder="-"
-                    maxLength={1}
-                    secureTextEntry={true}
-                    value={code3}
-                    onChangeText={e => {
-                        setCode({...code, code3: e});
-                        if (code3.length === 0) {
-                        ref_input4.current.focus()
-                        } else {
-                        ref_input2.current.focus()
-                        }
-                    }}
-                    />
-                    <InputCode
-                    onFocus={() => setInputFocus({...inputFocus, inputCode4: true})}
-                    onBlur={() => setInputFocus({...inputFocus, inputCode4: false})}
-                    focused={inputCode4}
-                    ref={ref_input4}
-                    type="text"
-                    placeholder="-"
-                    maxLength={1}
-                    secureTextEntry={true}
-                    value={code4}
-                    onChangeText={e => {
-                        setCode({...code, code4: e});
-                        if (code4.length === 0) {
-                        //pass
-                        } else {
-                        ref_input3.current.focus()
-                        }
-                    }}
-                    />
+            <Container flex={1}>
+                <Box mt="100px" mb="30px" flexDirection="row" justifyContent="center">
+                    <Texto>
+                        Adicione um número PIN para tornar sua conta mais segura
+                    </Texto>
                 </Box>
-                
-            </Box>
-            <Box mt="30px">
-                <ButtonFull onPress={() => Navigate("Home")}>
-                    <TextButton>Continuar</TextButton>
-                </ButtonFull>
+                <Box>
+                    <Box justifyContent="center" flexDirection="row">
+                        <InputCode
+                        onFocus={() => setInputFocus({...inputFocus, inputCode1: true})}
+                        onBlur={() => setInputFocus({...inputFocus, inputCode1: false})}
+                        focused={inputCode1}
+                        ref={ref_input1}
+                        autoFocus={true}
+                        type="text"
+                        placeholder="-"
+                        maxLength={1}
+                        secureTextEntry={true}
+                        value={code1}
+                        onChangeText={e => {
+                            setCode({...code, code1: e});
+                            if (code1.length === 0) {
+                            ref_input2.current.focus()
+                            } else {
+                            //pass
+                            }
+                        }}
+                        />
+                        <InputCode
+                        onFocus={() => setInputFocus({...inputFocus, inputCode2: true})}
+                        onBlur={() => setInputFocus({...inputFocus, inputCode2: false})}
+                        focused={inputCode2}
+                        ref={ref_input2}
+                        type="text"
+                        placeholder="-"
+                        maxLength={1}
+                        secureTextEntry={true}
+                        value={code2}
+                        onChangeText={e => {
+                            setCode({...code, code2: e});
+                            if (code2.length === 0) {
+                            ref_input3.current.focus()
+                            } else {
+                            ref_input1.current.focus()
+                            }
+                        }}
+                        />
+                        <InputCode
+                        onFocus={() => setInputFocus({...inputFocus, inputCode3: true})}
+                        onBlur={() => setInputFocus({...inputFocus, inputCode3: false})}
+                        focused={inputCode3}
+                        ref={ref_input3}
+                        type="text"
+                        placeholder="-"
+                        maxLength={1}
+                        secureTextEntry={true}
+                        value={code3}
+                        onChangeText={e => {
+                            setCode({...code, code3: e});
+                            if (code3.length === 0) {
+                            ref_input4.current.focus()
+                            } else {
+                            ref_input2.current.focus()
+                            }
+                        }}
+                        />
+                        <InputCode
+                        onFocus={() => setInputFocus({...inputFocus, inputCode4: true})}
+                        onBlur={() => setInputFocus({...inputFocus, inputCode4: false})}
+                        focused={inputCode4}
+                        ref={ref_input4}
+                        type="text"
+                        placeholder="-"
+                        maxLength={1}
+                        secureTextEntry={true}
+                        value={code4}
+                        onChangeText={e => {
+                            setCode({...code, code4: e});
+                            if (code4.length === 0) {
+                            //pass
+                            } else {
+                            ref_input3.current.focus()
+                            }
+                        }}
+                        />
+                    </Box>
+                </Box>
+            </Container>
+            <Box position="absolute" bottom={30} w="100%">
+                <Container>
+                    <ButtonFull onPress={() => Navigate("Home")}>
+                        <TextButton>Continuar</TextButton>
+                    </ButtonFull>
+                </Container>
             </Box>
         </>
     );
@@ -227,7 +245,7 @@ export default function ConfiguracaoConta({navigation}) {
     return(
         <SafeAreaView flex={1}>
             <StatusBar style="auto" />
-            <Container flex={1}>
+            <>
                 {(() => {
                     switch(contPage) {
                     case 1:
@@ -236,7 +254,7 @@ export default function ConfiguracaoConta({navigation}) {
                         return(<>{page2}</>);
                     }
                 })()}
-            </Container>
+            </>
         </SafeAreaView>
     );
 }

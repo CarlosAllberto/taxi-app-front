@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+//import { useState, useEffect } from "react";
 import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
 import { SafeAreaView, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
 import { StatusBar } from 'expo-status-bar';
@@ -8,11 +8,10 @@ import colors from "@helpers";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import mapStyle from "@helpers/mapStyle";
-import { ThemeProvider } from 'styled-components';
 import { useColorScheme } from 'react-native';
 import { useTheme } from "styled-components";
 
-import * as Location from "expo-location";
+//import * as Location from "expo-location";
 
 export default function Home({navigation}) {
 
@@ -24,6 +23,7 @@ export default function Home({navigation}) {
     const theme = useTheme();
     const themeBar = theme.tabBar;
 
+    /*
     const [location, setLocation] = useState(null);
     const [errorMsg, setErrorMsg] = useState(null);
 
@@ -39,6 +39,7 @@ export default function Home({navigation}) {
         setLocation(location);
       })()
     }, []);
+    */
 
     return(
         <SafeAreaView flex={1}>
@@ -48,8 +49,8 @@ export default function Home({navigation}) {
                 initialRegion={{
                 latitude: 37.78825,
                 longitude: -122.4324,
-                latitudeDelta: 0.003, //0.003
-                longitudeDelta: 0.003, //0.003
+                latitudeDelta: 0.005, //0.003
+                longitudeDelta: 0.005, //0.003
                 }}
                 provider={PROVIDER_GOOGLE}
                 customMapStyle={mapTheme}
@@ -65,9 +66,9 @@ export default function Home({navigation}) {
                 </Marker>
               </MapView>
               <Box mt="30px" mr="10px">
-                <SearchBar/>
+                <SearchBar Navigate={Navigate}/>
               </Box>
-              <Box style={styles.searchBar}>
+              <Box position="absolute" bottom={60} w="100%">
                 <Box mr="10px" flexDirection="row" justifyContent="flex-end">
                     <TouchableOpacity style={styles.button}>
                         <MaterialCommunityIcons name="crosshairs-gps" size={30} color={colors.cor6}/>
@@ -132,11 +133,6 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 20,
     elevation: 1,
   }),
-  searchBar: {
-    width: "100%",
-    position: "absolute",
-    bottom: 60,
-  },
   imageMarker: {
     borderWidth: 2,
     borderColor: colors.cor1,

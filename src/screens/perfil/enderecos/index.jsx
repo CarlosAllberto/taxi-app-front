@@ -138,13 +138,15 @@ export default function Enderecos({navigation}) {
                     <Box>
                         <Line />
                     </Box>
-                    <Box mt="25px">
-                        <ButtonFull onPress={() => Navigate("Adicionar Endereço")}>
-                            <TextButton>Adicionar Novo Endereço</TextButton>
-                        </ButtonFull>
-                    </Box>
                 </Box>
             </Container>
+            <Box position="absolute" bottom={30} w="100%">
+                <Container>
+                    <ButtonFull onPress={() => Navigate("Adicionar Endereço")}>
+                        <TextButton>Adicionar Novo Endereço</TextButton>
+                    </ButtonFull>
+                </Container>
+            </Box>
         </SafeAreaView>
     );
 }

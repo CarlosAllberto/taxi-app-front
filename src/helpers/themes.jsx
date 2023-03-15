@@ -16,7 +16,9 @@ const light = {
     tabBar: "#ffffff",
     icon: colors.cor6,
     map: "#f5f5f5",
-    cardBorder: "#e6e6e6"
+    cardBorder: "#e6e6e6",
+    boxCar: "#ffffff",
+    boxCarActive: "#e9e9e9",
 }
 
 const dark = {
@@ -35,7 +37,9 @@ const dark = {
     tabBar: colors.cor7,
     icon: colors.cor10,
     map: colors.cor6,
-    cardBorder: colors.cor5
+    cardBorder: colors.cor5,
+    boxCar: colors.cor7,
+    boxCarActive: colors.cor9,
 }
 
 export default { light, dark };

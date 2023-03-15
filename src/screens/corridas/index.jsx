@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { SafeAreaView } from "react-native";
+import { SafeAreaView, ScrollView } from "react-native";
 import { StatusBar } from 'expo-status-bar';
 import { Box, TitleGG, Container, SwitchContainer, SwitchButton, TextButton, Line, IMG, Title, Texto, Paper, Status } from "@components/globalStyles";
 import colors from "@helpers"
@@ -8,6 +8,53 @@ import colors from "@helpers"
 export default function Corridas() {
     
     const [contPage, setContPage] = useState(1);
+
+    const ativo = {
+        nome: "Carlos Alberto",
+        carro: "Mercedez-Benz",
+        placa: "HSW-4736"
+    }
+
+    const completado = [
+        {
+            nome: "Carlos Alberto",
+            carro: "Mercedez-Benz",
+            placa: "HSW-4736"
+        },
+        {
+            nome: "Carlos Alberto",
+            carro: "Mercedez-Benz",
+            placa: "HSW-4736"
+        },
+        {
+            nome: "Carlos Alberto",
+            carro: "Mercedez-Benz",
+            placa: "HSW-4736"
+        },
+        {
+            nome: "Carlos Alberto",
+            carro: "Mercedez-Benz",
+            placa: "HSW-4736"
+        },
+        {
+            nome: "Carlos Alberto",
+            carro: "Mercedez-Benz",
+            placa: "HSW-4736"
+        },
+    ]
+
+    const cancelado = [
+        {
+            nome: "Carlos Alberto",
+            carro: "Mercedez-Benz",
+            placa: "HSW-4736"
+        },
+        {
+            nome: "Carlos Alberto",
+            carro: "Mercedez-Benz",
+            placa: "HSW-4736"
+        },
+    ]
 
     const page1 = (
         <>
@@ -19,12 +66,12 @@ export default function Corridas() {
                         </Box>
                         <Box>
                             <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "77%"}}>
-                                <Title>Carlos Alberto</Title>
+                                <Title>{ativo.nome}</Title>
                                 <Status>Ativo</Status>
                             </Box>
                             <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "77%"}}>
-                                <Texto>Mercedes-Benz</Texto>
-                                <Title>HSW-4736</Title>
+                                <Texto>{ativo.carro}</Texto>
+                                <Title>{ativo.placa}</Title>
                             </Box>
                         </Box>
                     </Box>
@@ -35,182 +82,57 @@ export default function Corridas() {
 
     const page2 = (
         <>
-            <Box pt="5px" pb="5px">
-                <Paper>
-                    <Box flexDirection="row" alignItems="center">
-                        <Box mr="20px">
-                            <IMG w="70px" h="70px" radius="50px" source={require("@assets/IMG_PERFIL.jpg")} />
-                        </Box>
-                        <Box>
-                            <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "80%"}}>
-                                <Title>Carlos Alberto</Title>
-                                <Status color="#8ef08e">Completado</Status>
+            {completado.map((text, index) => {
+                return(
+                    <Box key={index} pt="5px" pb="5px">
+                        <Paper>
+                            <Box flexDirection="row" alignItems="center">
+                                <Box mr="20px">
+                                    <IMG w="70px" h="70px" radius="50px" source={require("@assets/IMG_PERFIL.jpg")} />
+                                </Box>
+                                <Box>
+                                    <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "80%"}}>
+                                        <Title>{text.nome}</Title>
+                                        <Status color="#8ef08e">Completado</Status>
+                                    </Box>
+                                    <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "80%"}}>
+                                        <Texto>{text.carro}</Texto>
+                                        <Title>{text.placa}</Title>
+                                    </Box>
+                                </Box>
                             </Box>
-                            <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "80%"}}>
-                                <Texto>Mercedes-Benz</Texto>
-                                <Title>HSW-4736</Title>
-                            </Box>
-                        </Box>
+                        </Paper>
                     </Box>
-                </Paper>
-            </Box>
-            <Box pt="5px" pb="5px">
-                <Paper>
-                    <Box flexDirection="row" alignItems="center">
-                        <Box mr="20px">
-                            <IMG w="70px" h="70px" radius="50px" source={require("@assets/IMG_PERFIL.jpg")} />
-                        </Box>
-                        <Box>
-                            <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "80%"}}>
-                                <Title>Carlos Alberto</Title>
-                                <Status color="#8ef08e">Completado</Status>
-                            </Box>
-                            <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "80%"}}>
-                                <Texto>Mercedes-Benz</Texto>
-                                <Title>HSW-4736</Title>
-                            </Box>
-                        </Box>
-                    </Box>
-                </Paper>
-            </Box>
-            <Box pt="5px" pb="5px">
-                <Paper>
-                    <Box flexDirection="row" alignItems="center">
-                        <Box mr="20px">
-                            <IMG w="70px" h="70px" radius="50px" source={require("@assets/IMG_PERFIL.jpg")} />
-                        </Box>
-                        <Box>
-                            <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "80%"}}>
-                                <Title>Carlos Alberto</Title>
-                                <Status color="#8ef08e">Completado</Status>
-                            </Box>
-                            <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "80%"}}>
-                                <Texto>Mercedes-Benz</Texto>
-                                <Title>HSW-4736</Title>
-                            </Box>
-                        </Box>
-                    </Box>
-                </Paper>
-            </Box>
-            <Box pt="5px" pb="5px">
-                <Paper>
-                    <Box flexDirection="row" alignItems="center">
-                        <Box mr="20px">
-                            <IMG w="70px" h="70px" radius="50px" source={require("@assets/IMG_PERFIL.jpg")} />
-                        </Box>
-                        <Box>
-                            <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "80%"}}>
-                                <Title>Carlos Alberto</Title>
-                                <Status color="#8ef08e">Completado</Status>
-                            </Box>
-                            <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "80%"}}>
-                                <Texto>Mercedes-Benz</Texto>
-                                <Title>HSW-4736</Title>
-                            </Box>
-                        </Box>
-                    </Box>
-                </Paper>
-            </Box>
-            <Box pt="5px" pb="5px">
-                <Paper>
-                    <Box flexDirection="row" alignItems="center">
-                        <Box mr="20px">
-                            <IMG w="70px" h="70px" radius="50px" source={require("@assets/IMG_PERFIL.jpg")} />
-                        </Box>
-                        <Box>
-                            <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "80%"}}>
-                                <Title>Carlos Alberto</Title>
-                                <Status color="#8ef08e">Completado</Status>
-                            </Box>
-                            <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "80%"}}>
-                                <Texto>Mercedes-Benz</Texto>
-                                <Title>HSW-4736</Title>
-                            </Box>
-                        </Box>
-                    </Box>
-                </Paper>
-            </Box>
-            <Box pt="5px" pb="5px">
-                <Paper>
-                    <Box flexDirection="row" alignItems="center">
-                        <Box mr="20px">
-                            <IMG w="70px" h="70px" radius="50px" source={require("@assets/IMG_PERFIL.jpg")} />
-                        </Box>
-                        <Box>
-                            <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "80%"}}>
-                                <Title>Carlos Alberto</Title>
-                                <Status color="#8ef08e">Completado</Status>
-                            </Box>
-                            <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "80%"}}>
-                                <Texto>Mercedes-Benz</Texto>
-                                <Title>HSW-4736</Title>
-                            </Box>
-                        </Box>
-                    </Box>
-                </Paper>
-            </Box>
-            <Box pt="5px" pb="5px">
-                <Paper>
-                    <Box flexDirection="row" alignItems="center">
-                        <Box mr="20px">
-                            <IMG w="70px" h="70px" radius="50px" source={require("@assets/IMG_PERFIL.jpg")} />
-                        </Box>
-                        <Box>
-                            <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "80%"}}>
-                                <Title>Carlos Alberto</Title>
-                                <Status color="#8ef08e">Completado</Status>
-                            </Box>
-                            <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "80%"}}>
-                                <Texto>Mercedes-Benz</Texto>
-                                <Title>HSW-4736</Title>
-                            </Box>
-                        </Box>
-                    </Box>
-                </Paper>
-            </Box>
+                );
+            })}
         </>
     );
 
     const page3 = (
         <>
-            <Box pt="5px" pb="5px">
-                <Paper>
-                    <Box flexDirection="row" alignItems="center">
-                        <Box mr="20px">
-                            <IMG w="70px" h="70px" radius="50px" source={require("@assets/IMG_PERFIL.jpg")} />
-                        </Box>
-                        <Box>
-                            <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "80%"}}>
-                                <Title>Carlos Alberto</Title>
-                                <Status color="red">Cancelado</Status>
+            {cancelado.map((text, index) => {
+                return(
+                    <Box key={index} pt="5px" pb="5px">
+                        <Paper>
+                            <Box flexDirection="row" alignItems="center">
+                                <Box mr="20px">
+                                    <IMG w="70px" h="70px" radius="50px" source={require("@assets/IMG_PERFIL.jpg")} />
+                                </Box>
+                                <Box>
+                                    <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "80%"}}>
+                                        <Title>{text.nome}</Title>
+                                        <Status color="red">Cancelado</Status>
+                                    </Box>
+                                    <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "80%"}}>
+                                        <Texto>{text.carro}</Texto>
+                                        <Title>{text.placa}</Title>
+                                    </Box>
+                                </Box>
                             </Box>
-                            <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "80%"}}>
-                                <Texto>Mercedes-Benz</Texto>
-                                <Title>HSW-4736</Title>
-                            </Box>
-                        </Box>
+                        </Paper>
                     </Box>
-                </Paper>
-            </Box>
-            <Box pt="5px" pb="5px">
-                <Paper>
-                    <Box flexDirection="row" alignItems="center">
-                        <Box mr="20px">
-                            <IMG w="70px" h="70px" radius="50px" source={require("@assets/IMG_PERFIL.jpg")} />
-                        </Box>
-                        <Box>
-                            <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "80%"}}>
-                                <Title>Carlos Alberto</Title>
-                                <Status color="red">Cancelado</Status>
-                            </Box>
-                            <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "80%"}}>
-                                <Texto>Mercedes-Benz</Texto>
-                                <Title>HSW-4736</Title>
-                            </Box>
-                        </Box>
-                    </Box>
-                </Paper>
-            </Box>
+                );
+            })}
         </>
     );
 
@@ -233,6 +155,8 @@ export default function Corridas() {
                             <TextButton size="16px" color={contPage === 3 ? "#fff" : colors.cor5}>Cancelado</TextButton>
                         </SwitchButton>
                     </SwitchContainer>
+                </Box>
+                <Box mt="20px">
                     <Line />
                 </Box>
                 <Box>

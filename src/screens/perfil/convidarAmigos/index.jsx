@@ -45,9 +45,9 @@ export default function ConvidarAmigos() {
                                     </Box>
                                 </Box>
                                 <Box>
-                                    <ButtonOutline radius="50px">
-                                        <TextButton color={colors.cor1}>Convidado</TextButton>
-                                    </ButtonOutline>
+                                    <Button radius="50px">
+                                        <TextButton color={colors.cor5}>Convidar</TextButton>
+                                    </Button>
                                 </Box>
                             </Box>
                         </Box>
@@ -87,9 +87,9 @@ export default function ConvidarAmigos() {
                                     </Box>
                                 </Box>
                                 <Box>
-                                    <ButtonOutline radius="50px">
-                                        <TextButton color={colors.cor1}>Convidado</TextButton>
-                                    </ButtonOutline>
+                                    <Button radius="50px">
+                                        <TextButton color={colors.cor5}>Convidar</TextButton>
+                                    </Button>
                                 </Box>
                             </Box>
                         </Box>
@@ -108,9 +108,9 @@ export default function ConvidarAmigos() {
                                     </Box>
                                 </Box>
                                 <Box>
-                                    <ButtonOutline radius="50px">
-                                        <TextButton color={colors.cor1}>Convidado</TextButton>
-                                    </ButtonOutline>
+                                    <Button radius="50px">
+                                        <TextButton color={colors.cor5}>Convidar</TextButton>
+                                    </Button>
                                 </Box>
                             </Box>
                         </Box>
@@ -129,9 +129,9 @@ export default function ConvidarAmigos() {
                                     </Box>
                                 </Box>
                                 <Box>
-                                    <ButtonOutline radius="50px">
-                                        <TextButton color={colors.cor1}>Convidado</TextButton>
-                                    </ButtonOutline>
+                                    <Button radius="50px">
+                                        <TextButton color={colors.cor5}>Convidar</TextButton>
+                                    </Button>
                                 </Box>
                             </Box>
                         </Box>
@@ -150,9 +150,9 @@ export default function ConvidarAmigos() {
                                     </Box>
                                 </Box>
                                 <Box>
-                                    <ButtonOutline radius="50px">
-                                        <TextButton color={colors.cor1}>Convidado</TextButton>
-                                    </ButtonOutline>
+                                    <Button radius="50px">
+                                        <TextButton color={colors.cor5}>Convidar</TextButton>
+                                    </Button>
                                 </Box>
                             </Box>
                         </Box>
@@ -171,9 +171,9 @@ export default function ConvidarAmigos() {
                                     </Box>
                                 </Box>
                                 <Box>
-                                    <ButtonOutline radius="50px">
-                                        <TextButton color={colors.cor1}>Convidado</TextButton>
-                                    </ButtonOutline>
+                                    <Button radius="50px">
+                                        <TextButton color={colors.cor5}>Convidar</TextButton>
+                                    </Button>
                                 </Box>
                             </Box>
                         </Box>
