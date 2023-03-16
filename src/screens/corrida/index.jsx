@@ -140,7 +140,7 @@ export default function Corrida({ navigation }) {
                             </Box>
                         </Box>
                         <Box flexDirection="row" justifyContent="center">
-                            <TouchableOpacity style={styles.buttonClose}>
+                            <TouchableOpacity onPress={() => Navigate("Cancelar Corrida")} style={styles.buttonClose}>
                                 <MaterialCommunityIcons
                                     name="close"
                                     size={30}

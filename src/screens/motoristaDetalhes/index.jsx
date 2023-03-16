@@ -1,17 +1,11 @@
 import { SafeAreaView, StyleSheet, TouchableOpacity } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import { Box, Title, Texto, Paper, Container } from "@components/globalStyles";
+import { Box, Title, Texto, Paper, Container, IMG } from "@components/globalStyles";
 import colors from "@helpers";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
-import { ImagePerfil } from "@components/globalComponents";
-import { useColorScheme } from "react-native";
-import { useTheme } from "styled-components";
 
 export default function MotoristaDetalhes({ navigation }) {
     const Navigate = (screen) => navigation.navigate(screen);
-
-    const deviceTheme = useColorScheme();
-    const theme = useTheme();
 
     return (
         <SafeAreaView flex={1}>
@@ -26,9 +20,7 @@ export default function MotoristaDetalhes({ navigation }) {
                                 flexDirection="row"
                                 justifyContent="center"
                             >
-                                <ImagePerfil
-                                    source={require("@assets/IMG_PERFIL.jpg")}
-                                />
+                                <IMG w="120px" radius="100px" h="120px" source={require("@assets/IMG_PERFIL.jpg")}/> 
                             </Box>
                             <Box>
                                 <Title style={{ textAlign: "center" }}>

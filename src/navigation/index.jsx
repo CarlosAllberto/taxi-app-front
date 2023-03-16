@@ -22,8 +22,10 @@ import EscolherCarro from "@screens/escolherCarro";
 import ProcurarMotorista from "@screens/procurarMotorista";
 import Corrida from "@screens/corrida";
 import MotoristaDetalhes from "@screens/motoristaDetalhes";
+import Ligacao from "@screens/ligacao";
 import Ajuda from "@screens/perfil/ajuda";
 import ShowBottomTabs from "./TabNavigation";
+import CancelarCorrida from "@screens/cancelarCorrida"
 
 import { useTheme } from "styled-components";
 
@@ -58,7 +60,8 @@ export default function Navigation() {
             <Stack.Screen options={header} name="Procurando Motorista" component={ProcurarMotorista} />
             <Stack.Screen options={{headerShown: false}} name="Corrida" component={Corrida} />
             <Stack.Screen options={header} name="Motorista Detalhes" component={MotoristaDetalhes} />
-            <Stack.Screen options={header} name="Editar Conta" component={EditarConta} />
+            <Stack.Screen options={header} name="Cancelar Corrida" component={CancelarCorrida} />
+            <Stack.Screen options={headerNoTitle} name="Ligação" component={Ligacao} />
             <Stack.Screen options={header} name="Politica de Privacidade" component={PoliticaPrivacidade} />
             <Stack.Screen options={header} name="Endereços" component={Enderecos} />
             <Stack.Screen options={header} name="Adicionar Endereço" component={AdicionarEndereco} />
