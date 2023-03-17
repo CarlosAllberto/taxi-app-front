@@ -28,7 +28,7 @@ export default function Enderecos({navigation}) {
                                 <Ionicons name="location" size={30} color={colors.cor6} />
                             </Box>
                         </Box>
-                        <Box flexDirection="row" justifyContent="space-between" style={{width: "77%"}}>
+                        <Box flexDirection="row" justifyContent="space-between" flex={1}>
                             <Box>
                                 <Title>Casa</Title>
                                 <Box flexDirection="row" alignItems="center">
@@ -59,7 +59,7 @@ export default function Enderecos({navigation}) {
                                 <Ionicons name="location" size={30} color={colors.cor6} />
                             </Box>
                         </Box>
-                        <Box flexDirection="row" justifyContent="space-between" style={{width: "77%"}}>
+                        <Box flexDirection="row" justifyContent="space-between" flex={1}>
                             <Box>
                                 <Title>Apartamento</Title>
                                 <Box flexDirection="row" alignItems="center">
@@ -90,7 +90,7 @@ export default function Enderecos({navigation}) {
                                 <Ionicons name="location" size={30} color={colors.cor6} />
                             </Box>
                         </Box>
-                        <Box flexDirection="row" justifyContent="space-between" style={{width: "77%"}}>
+                        <Box flexDirection="row" justifyContent="space-between" flex={1}>
                             <Box>
                                 <Title>Casa</Title>
                                 <Box flexDirection="row" alignItems="center">
@@ -121,7 +121,7 @@ export default function Enderecos({navigation}) {
                                 <Ionicons name="location" size={30} color={colors.cor6} />
                             </Box>
                         </Box>
-                        <Box flexDirection="row" justifyContent="space-between" style={{width: "77%"}}>
+                        <Box flexDirection="row" justifyContent="space-between" flex={1}>
                             <Box>
                                 <Title>Apartamento</Title>
                                 <Box flexDirection="row" alignItems="center">

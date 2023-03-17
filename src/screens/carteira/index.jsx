@@ -18,7 +18,7 @@ export default function Carteira() {
             nome: "Carlos Alberto",
             data: "Dec 19, 2023",
             hora: "14:00",
-            valor: "R$ 07,00",
+            valor: "R$ 7,00",
             tipo: "Recebido"
         },
         {
@@ -32,7 +32,7 @@ export default function Carteira() {
             nome: "Carlos Alberto",
             data: "Dec 19, 2023",
             hora: "14:00",
-            valor: "R$ 07,00",
+            valor: "R$ 7,00",
             tipo: "Recebido"
         },
     ]
@@ -64,12 +64,12 @@ export default function Carteira() {
                                     <Box mr="20px">
                                         <IMG w="70px" h="70px" radius="50px" source={require("@assets/IMG_PERFIL.jpg")} />
                                     </Box>
-                                    <Box>
-                                        <Box flexDirection="row" alignItems="center" justifyContent="space-between" w="77%">
+                                    <Box flex={1}>
+                                        <Box flexDirection="row" alignItems="center" justifyContent="space-between">
                                             <Title>{text.nome}</Title>
                                             <Title>{text.valor}</Title>
                                         </Box>
-                                        <Box flexDirection="row" alignItems="center" justifyContent="space-between" w="77%">
+                                        <Box flexDirection="row" alignItems="center" justifyContent="space-between">
                                             <Box>
                                                 <Texto>{text.data} | {text.hora}</Texto>
                                             </Box>

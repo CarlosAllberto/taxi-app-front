@@ -65,8 +65,8 @@ export default function Comunicacao() {
                                 <Box mr="20px">
                                     <IMG w="70px" h="70px" radius="50px" source={require("@assets/IMG_PERFIL.jpg")} />
                                 </Box>
-                                <Box>
-                                    <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "73%"}}>
+                                <Box flex={1}>
+                                    <Box flexDirection="row" alignItems="center" justifyContent="space-between">
                                         <Title>{text.nome}</Title>
                                         <NotificationSms>
                                             <Texto pt="0px" pb="0px" fontWeight={500}>
@@ -74,7 +74,7 @@ export default function Comunicacao() {
                                             </Texto>
                                         </NotificationSms>
                                     </Box>
-                                    <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "73%"}}>
+                                    <Box flexDirection="row" alignItems="center" justifyContent="space-between">
                                         <Texto>{text.msg}</Texto>
                                         <Texto>{text.hora}</Texto>
                                     </Box>
@@ -112,7 +112,7 @@ export default function Comunicacao() {
                                 <Box mr="20px">
                                     <IMG w="70px" h="70px" radius="50px" source={require("@assets/IMG_PERFIL.jpg")} />
                                 </Box>
-                                <Box flexDirection="row" justifyContent="space-between" style={{width: "73%"}}>
+                                <Box flexDirection="row" justifyContent="space-between" flex={1}>
                                     <Box>
                                         <Title>{text.nome}</Title>
                                         <Box flexDirection="row" alignItems="center">

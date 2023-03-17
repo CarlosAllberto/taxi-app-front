@@ -64,12 +64,12 @@ export default function Corridas() {
                         <Box mr="20px">
                             <IMG w="70px" h="70px" radius="50px" source={require("@assets/IMG_PERFIL.jpg")} />
                         </Box>
-                        <Box>
-                            <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "77%"}}>
+                        <Box flex={1}>
+                            <Box flexDirection="row" alignItems="center" justifyContent="space-between">
                                 <Title>{ativo.nome}</Title>
                                 <Status>Ativo</Status>
                             </Box>
-                            <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "77%"}}>
+                            <Box flexDirection="row" alignItems="center" justifyContent="space-between">
                                 <Texto>{ativo.carro}</Texto>
                                 <Title>{ativo.placa}</Title>
                             </Box>
@@ -90,12 +90,12 @@ export default function Corridas() {
                                 <Box mr="20px">
                                     <IMG w="70px" h="70px" radius="50px" source={require("@assets/IMG_PERFIL.jpg")} />
                                 </Box>
-                                <Box>
-                                    <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "80%"}}>
+                                <Box flex={1}>
+                                    <Box flexDirection="row" alignItems="center" justifyContent="space-between">
                                         <Title>{text.nome}</Title>
                                         <Status color="#8ef08e">Completado</Status>
                                     </Box>
-                                    <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "80%"}}>
+                                    <Box flexDirection="row" alignItems="center" justifyContent="space-between">
                                         <Texto>{text.carro}</Texto>
                                         <Title>{text.placa}</Title>
                                     </Box>
@@ -118,12 +118,12 @@ export default function Corridas() {
                                 <Box mr="20px">
                                     <IMG w="70px" h="70px" radius="50px" source={require("@assets/IMG_PERFIL.jpg")} />
                                 </Box>
-                                <Box>
-                                    <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "80%"}}>
+                                <Box flex={1}>
+                                    <Box flexDirection="row" alignItems="center" justifyContent="space-between">
                                         <Title>{text.nome}</Title>
                                         <Status color="red">Cancelado</Status>
                                     </Box>
-                                    <Box flexDirection="row" alignItems="center" justifyContent="space-between" style={{width: "80%"}}>
+                                    <Box flexDirection="row" alignItems="center" justifyContent="space-between">
                                         <Texto>{text.carro}</Texto>
                                         <Title>{text.placa}</Title>
                                     </Box>

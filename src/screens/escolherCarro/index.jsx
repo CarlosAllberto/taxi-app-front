@@ -101,7 +101,7 @@ export default function EscolherCarro({ navigation }) {
                                             <IMG
                                                 w="60px"
                                                 h="60px"
-                                                source={require("@assets/carro.png")}
+                                                source={require("@assets/taxi-logo.png")}
                                             />
                                         </Box>
                                         <Box>
@@ -124,7 +124,7 @@ export default function EscolherCarro({ navigation }) {
                                             <IMG
                                                 w="60px"
                                                 h="60px"
-                                                source={require("@assets/caixa.png")}
+                                                source={require("@assets/box.png")}
                                             />
                                         </Box>
                                         <Box>

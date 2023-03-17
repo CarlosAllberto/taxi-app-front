@@ -16,7 +16,7 @@ export default function ConvidarAmigos() {
                             <Box mr="20px">
                                 <IMG w="70px" h="70px" radius="50px" source={require("@assets/IMG_PERFIL.jpg")} />
                             </Box>
-                            <Box flexDirection="row" justifyContent="space-between" style={{width: "73%"}}>
+                            <Box flexDirection="row" justifyContent="space-between" flex={1}>
                                 <Box>
                                     <Title>Carlos Alberto</Title>
                                     <Box>
@@ -37,7 +37,7 @@ export default function ConvidarAmigos() {
                             <Box mr="20px">
                                 <IMG w="70px" h="70px" radius="50px" source={require("@assets/IMG_PERFIL.jpg")} />
                             </Box>
-                            <Box flexDirection="row" justifyContent="space-between" style={{width: "73%"}}>
+                            <Box flexDirection="row" justifyContent="space-between" flex={1}>
                                 <Box>
                                     <Title>Carlos Alberto</Title>
                                     <Box>
@@ -58,7 +58,7 @@ export default function ConvidarAmigos() {
                             <Box mr="20px">
                                 <IMG w="70px" h="70px" radius="50px" source={require("@assets/IMG_PERFIL.jpg")} />
                             </Box>
-                            <Box flexDirection="row" justifyContent="space-between" style={{width: "73%"}}>
+                            <Box flexDirection="row" justifyContent="space-between" flex={1}>
                                 <Box>
                                     <Title>Carlos Alberto</Title>
                                     <Box>
@@ -79,7 +79,7 @@ export default function ConvidarAmigos() {
                             <Box mr="20px">
                                 <IMG w="70px" h="70px" radius="50px" source={require("@assets/IMG_PERFIL.jpg")} />
                             </Box>
-                            <Box flexDirection="row" justifyContent="space-between" style={{width: "73%"}}>
+                            <Box flexDirection="row" justifyContent="space-between" flex={1}>
                                 <Box>
                                     <Title>Carlos Alberto</Title>
                                     <Box>
@@ -100,7 +100,7 @@ export default function ConvidarAmigos() {
                             <Box mr="20px">
                                 <IMG w="70px" h="70px" radius="50px" source={require("@assets/IMG_PERFIL.jpg")} />
                             </Box>
-                            <Box flexDirection="row" justifyContent="space-between" style={{width: "73%"}}>
+                            <Box flexDirection="row" justifyContent="space-between" flex={1}>
                                 <Box>
                                     <Title>Carlos Alberto</Title>
                                     <Box>
@@ -121,7 +121,7 @@ export default function ConvidarAmigos() {
                             <Box mr="20px">
                                 <IMG w="70px" h="70px" radius="50px" source={require("@assets/IMG_PERFIL.jpg")} />
                             </Box>
-                            <Box flexDirection="row" justifyContent="space-between" style={{width: "73%"}}>
+                            <Box flexDirection="row" justifyContent="space-between" flex={1}>
                                 <Box>
                                     <Title>Carlos Alberto</Title>
                                     <Box>
@@ -142,7 +142,7 @@ export default function ConvidarAmigos() {
                             <Box mr="20px">
                                 <IMG w="70px" h="70px" radius="50px" source={require("@assets/IMG_PERFIL.jpg")} />
                             </Box>
-                            <Box flexDirection="row" justifyContent="space-between" style={{width: "73%"}}>
+                            <Box flexDirection="row" justifyContent="space-between" flex={1}>
                                 <Box>
                                     <Title>Carlos Alberto</Title>
                                     <Box>
@@ -163,7 +163,7 @@ export default function ConvidarAmigos() {
                             <Box mr="20px">
                                 <IMG w="70px" h="70px" radius="50px" source={require("@assets/IMG_PERFIL.jpg")} />
                             </Box>
-                            <Box flexDirection="row" justifyContent="space-between" style={{width: "73%"}}>
+                            <Box flexDirection="row" justifyContent="space-between" flex={1}>
                                 <Box>
                                     <Title>Carlos Alberto</Title>
                                     <Box>

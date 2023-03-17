@@ -16,8 +16,8 @@ const routes = [
     },
     {
         icon: "card-outline",
-        name: "Pagamentos",
-        rota: "Home"
+        name: "Cartões",
+        rota: "Cartões"
     },
     {
         icon: "shield-checkmark-outline",

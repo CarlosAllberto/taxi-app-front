@@ -24,7 +24,7 @@ const light = [
                 "visibility": "on"
             },
             {
-                "color": colors.cor10
+                "color": colors.co10
             },
             {
                 "lightness": 16
@@ -72,7 +72,7 @@ const light = [
         "elementType": "geometry",
         "stylers": [
             {
-                "color": colors.cor3 //f5f5f5
+                "color": colors.cor10 //f5f5f5
             },
             {
                 "lightness": 20
@@ -96,7 +96,7 @@ const light = [
         "elementType": "geometry",
         "stylers": [
             {
-                "color": colors.cor2
+                "color": colors.cor10
             },
             {
                 "lightness": 21
@@ -207,7 +207,7 @@ const light = [
                 "visibility": "on"
             },
             {
-                "color": colors.cor10
+                "color": colors.cor3
             }
         ]
     },
@@ -231,7 +231,7 @@ const light = [
                 "visibility": "on"
             },
             {
-                "color": colors.cor10
+                "color": colors.cor3
             },
             {
                 "weight": "1.21"
@@ -492,7 +492,7 @@ const dark = [
         "elementType": "geometry",
         "stylers": [
             {
-                "color": "#ffffff"
+                "color": colors.cor9
             },
             {
                 "lightness": 10

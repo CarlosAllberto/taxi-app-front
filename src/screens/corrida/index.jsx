@@ -95,7 +95,7 @@ export default function Corrida({ navigation }) {
                         <Box mt="20px" mb="20px">
                             <Line />
                         </Box>
-                        <Box>
+                        <Box mt="10px" mb="10px">
                             <Box flexDirection="row" alignItems="center">
                                 <Box mr="20px">
                                     <TouchableOpacity onPress={() => Navigate("Motorista Detalhes")}>
@@ -107,12 +107,11 @@ export default function Corrida({ navigation }) {
                                         />
                                     </TouchableOpacity>
                                 </Box>
-                                <Box mt="10px" mb="10px">
+                                <Box flex={1}>
                                     <Box
                                         flexDirection="row"
                                         alignItems="center"
                                         justifyContent="space-between"
-                                        style={{ width: "75%" }}
                                     >
                                         <Title>Daniel Austin</Title>
                                         <Box
@@ -131,7 +130,6 @@ export default function Corrida({ navigation }) {
                                         flexDirection="row"
                                         alignItems="center"
                                         justifyContent="space-between"
-                                        style={{ width: "75%" }}
                                     >
                                         <Texto>Mercedes-Benz E-Class</Texto>
                                         <Title>HSW-4736</Title>

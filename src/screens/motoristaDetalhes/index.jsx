@@ -12,7 +12,7 @@ export default function MotoristaDetalhes({ navigation }) {
             <StatusBar style="auto" />
             <Container flex={1}>
                 <Box mt="30px" flex={1}>
-                    <Box>
+                    <Box mb="30px">
                         <Box>
                             <Box
                                 mb="20px"
@@ -32,7 +32,7 @@ export default function MotoristaDetalhes({ navigation }) {
                             </Box>
                         </Box>
                     </Box>
-                    <Box>
+                    <Box mb="30px">
                         <Paper>
                             <Box flexDirection="row" justifyContent="center">
                                 <Box>

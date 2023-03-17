@@ -26,6 +26,8 @@ import Ligacao from "@screens/ligacao";
 import Ajuda from "@screens/perfil/ajuda";
 import ShowBottomTabs from "./TabNavigation";
 import CancelarCorrida from "@screens/cancelarCorrida"
+import AdicionarCartao from "@screens/perfil/adicionarCartao";
+import Cartoes from "@screens/perfil/cartoes";
 
 import { useTheme } from "styled-components";
 
@@ -63,12 +65,15 @@ export default function Navigation() {
             <Stack.Screen options={header} name="Cancelar Corrida" component={CancelarCorrida} />
             <Stack.Screen options={headerNoTitle} name="Ligação" component={Ligacao} />
             <Stack.Screen options={header} name="Politica de Privacidade" component={PoliticaPrivacidade} />
+            <Stack.Screen options={header} name="Editar Conta" component={EditarConta} />
             <Stack.Screen options={header} name="Endereços" component={Enderecos} />
             <Stack.Screen options={header} name="Adicionar Endereço" component={AdicionarEndereco} />
             <Stack.Screen options={header} name="Editar Endereço" component={EditarEndereco} />
             <Stack.Screen options={header} name="Notificações" component={Notificacoes} />
             <Stack.Screen options={header} name="Segurança" component={Seguranca} />
             <Stack.Screen options={header} name="Convidar Amigos" component={ConvidarAmigos} />
+            <Stack.Screen options={header} name="Adicionar Cartão" component={AdicionarCartao} />
+            <Stack.Screen options={header} name="Cartões" component={Cartoes} />
             <Stack.Screen options={header} name="Ajuda" component={Ajuda} />
         </Stack.Navigator>
     );

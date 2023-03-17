@@ -67,6 +67,12 @@ export default function ProcurarMotorista({ navigation }) {
                     <Container>
                         <Box mt="30px" mb="30px">
                             <SlideButton
+                                titleStyle={{
+                                    color:
+                                        deviceTheme === "dark"
+                                            ? colors.cor10
+                                            : colors.cor6,
+                                }}
                                 title="deslize para cancelar"
                                 width={250}
                                 thumbStyle={{ backgroundColor: colors.cor2 }}
